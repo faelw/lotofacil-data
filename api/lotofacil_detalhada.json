@@ -1,0 +1,1041 @@
+[
+  {
+    "loteria": "lotofacil",
+    "concurso": 1,
+    "data": "29/09/2003",
+    "local": "Caminhão da Sorte em CRUZ ALTA, RS",
+    "concursoEspecial": false,
+    "dezenasOrdemSorteio": [
+      "18",
+      "20",
+      "25",
+      "23",
+      "10",
+      "11",
+      "24",
+      "14",
+      "06",
+      "02",
+      "13",
+      "09",
+      "05",
+      "16",
+      "03"
+    ],
+    "dezenas": [
+      "02",
+      "03",
+      "05",
+      "06",
+      "09",
+      "10",
+      "11",
+      "13",
+      "14",
+      "16",
+      "18",
+      "20",
+      "23",
+      "24",
+      "25"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 5,
+        "valorPremio": 49765.82
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 154,
+        "valorPremio": 689.84
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 4645,
+        "valorPremio": 10.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 48807,
+        "valorPremio": 4.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 257593,
+        "valorPremio": 2.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "Estimativa de prêmio (15 ACERTOS) próximo concurso: R$250.000,00.",
+    "acumulou": false,
+    "proximoConcurso": 2,
+    "dataProximoConcurso": "06/10/2003",
+    "localGanhadores": [
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "BA"
+      },
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "PR"
+      },
+      {
+        "ganhadores": 3,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "SP"
+      }
+    ],
+    "valorArrecadado": 0.0,
+    "valorAcumuladoConcurso_0_5": 0.0,
+    "valorAcumuladoConcursoEspecial": 0.0,
+    "valorAcumuladoProximoConcurso": 0.0,
+    "valorEstimadoProximoConcurso": 0.0
+  },
+  {
+    "loteria": "lotofacil",
+    "concurso": 2,
+    "data": "06/10/2003",
+    "local": "Caminhão da Sorte em GUARAÇAÍ, SP",
+    "concursoEspecial": false,
+    "dezenasOrdemSorteio": [
+      "23",
+      "15",
+      "05",
+      "04",
+      "12",
+      "16",
+      "20",
+      "06",
+      "11",
+      "19",
+      "24",
+      "01",
+      "09",
+      "13",
+      "07"
+    ],
+    "dezenas": [
+      "01",
+      "04",
+      "05",
+      "06",
+      "07",
+      "09",
+      "11",
+      "12",
+      "13",
+      "15",
+      "16",
+      "19",
+      "20",
+      "23",
+      "24"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 1,
+        "valorPremio": 596323.7
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 184,
+        "valorPremio": 1388.95
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 6232,
+        "valorPremio": 10.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 81252,
+        "valorPremio": 4.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 478188,
+        "valorPremio": 2.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "ESTIMATIVA DE PRÊMIO PARA O PRÓXIMO CONCURSO (15 ACERTOS): R$500.000,00",
+    "acumulou": false,
+    "proximoConcurso": 3,
+    "dataProximoConcurso": "13/10/2003",
+    "localGanhadores": [
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "SP"
+      }
+    ],
+    "valorArrecadado": 0.0,
+    "valorAcumuladoConcurso_0_5": 0.0,
+    "valorAcumuladoConcursoEspecial": 0.0,
+    "valorAcumuladoProximoConcurso": 0.0,
+    "valorEstimadoProximoConcurso": 0.0
+  },
+  {
+    "loteria": "lotofacil",
+    "concurso": 3,
+    "data": "13/10/2003",
+    "local": "Caminhão da Sorte em BLUMENAU, SC",
+    "concursoEspecial": false,
+    "dezenasOrdemSorteio": [
+      "20",
+      "23",
+      "12",
+      "08",
+      "06",
+      "01",
+      "07",
+      "11",
+      "14",
+      "04",
+      "16",
+      "10",
+      "09",
+      "17",
+      "24"
+    ],
+    "dezenas": [
+      "01",
+      "04",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "17",
+      "20",
+      "23",
+      "24"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 2,
+        "valorPremio": 400623.7
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 158,
+        "valorPremio": 2173.36
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 6897,
+        "valorPremio": 10.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 96244,
+        "valorPremio": 4.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 608211,
+        "valorPremio": 2.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "Estimativa de prêmio (15 ACERTOS) próximo concurso: R$700.000,00.",
+    "acumulou": false,
+    "proximoConcurso": 4,
+    "dataProximoConcurso": "20/10/2003",
+    "localGanhadores": [
+      {
+        "ganhadores": 2,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "SP"
+      }
+    ],
+    "valorArrecadado": 0.0,
+    "valorAcumuladoConcurso_0_5": 0.0,
+    "valorAcumuladoConcursoEspecial": 0.0,
+    "valorAcumuladoProximoConcurso": 0.0,
+    "valorEstimadoProximoConcurso": 0.0
+  },
+  {
+    "loteria": "lotofacil",
+    "concurso": 4,
+    "data": "20/10/2003",
+    "local": "Caminhão da Sorte em Caxias do Sul, RS",
+    "concursoEspecial": false,
+    "dezenasOrdemSorteio": [
+      "16",
+      "05",
+      "25",
+      "24",
+      "23",
+      "08",
+      "12",
+      "02",
+      "17",
+      "18",
+      "01",
+      "10",
+      "04",
+      "19",
+      "13"
+    ],
+    "dezenas": [
+      "01",
+      "02",
+      "04",
+      "05",
+      "08",
+      "10",
+      "12",
+      "13",
+      "16",
+      "17",
+      "18",
+      "19",
+      "23",
+      "24",
+      "25"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 1,
+        "valorPremio": 902226.02
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 258,
+        "valorPremio": 1498.72
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 9569,
+        "valorPremio": 10.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 123912,
+        "valorPremio": 4.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 706657,
+        "valorPremio": 2.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "Estimativa de prêmio (15 ACERTOS) próximo concurso: R$800.000,00.",
+    "acumulou": false,
+    "proximoConcurso": 5,
+    "dataProximoConcurso": "27/10/2003",
+    "localGanhadores": [
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "MT"
+      }
+    ],
+    "valorArrecadado": 0.0,
+    "valorAcumuladoConcurso_0_5": 0.0,
+    "valorAcumuladoConcursoEspecial": 0.0,
+    "valorAcumuladoProximoConcurso": 0.0,
+    "valorEstimadoProximoConcurso": 0.0
+  },
+  {
+    "loteria": "lotofacil",
+    "concurso": 5,
+    "data": "27/10/2003",
+    "local": "Caminhão da Sorte em Vicente de Carvalho, SP",
+    "concursoEspecial": false,
+    "dezenasOrdemSorteio": [
+      "15",
+      "13",
+      "20",
+      "02",
+      "11",
+      "24",
+      "09",
+      "16",
+      "04",
+      "23",
+      "25",
+      "12",
+      "08",
+      "19",
+      "01"
+    ],
+    "dezenas": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "09",
+      "11",
+      "12",
+      "13",
+      "15",
+      "16",
+      "19",
+      "20",
+      "23",
+      "24",
+      "25"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 2,
+        "valorPremio": 380017.55
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 472,
+        "valorPremio": 687.49
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 14736,
+        "valorPremio": 10.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 195636,
+        "valorPremio": 4.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 860992,
+        "valorPremio": 2.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "Estimativa de prêmio para o próximo concurso (15 ACERTOS): R$800.000,00.",
+    "acumulou": false,
+    "proximoConcurso": 6,
+    "dataProximoConcurso": "03/11/2003",
+    "localGanhadores": [
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "BA"
+      },
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "MS"
+      }
+    ],
+    "valorArrecadado": 0.0,
+    "valorAcumuladoConcurso_0_5": 0.0,
+    "valorAcumuladoConcursoEspecial": 0.0,
+    "valorAcumuladoProximoConcurso": 0.0,
+    "valorEstimadoProximoConcurso": 0.0
+  },
+  {
+    "loteria": "lotofacil",
+    "concurso": 6,
+    "data": "03/11/2003",
+    "local": "Caminhão da Sorte em Poços de Caldas, MG",
+    "concursoEspecial": false,
+    "dezenasOrdemSorteio": [
+      "23",
+      "19",
+      "01",
+      "05",
+      "07",
+      "21",
+      "16",
+      "10",
+      "15",
+      "25",
+      "06",
+      "02",
+      "12",
+      "04",
+      "17"
+    ],
+    "dezenas": [
+      "01",
+      "02",
+      "04",
+      "05",
+      "06",
+      "07",
+      "10",
+      "12",
+      "15",
+      "16",
+      "17",
+      "19",
+      "21",
+      "23",
+      "25"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 2,
+        "valorPremio": 489140.06
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 393,
+        "valorPremio": 1066.83
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 14242,
+        "valorPremio": 10.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 162320,
+        "valorPremio": 4.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 888301,
+        "valorPremio": 2.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "Estimativa de prêmio (15 ACERTOS) próximo concurso: R$900.000,00.",
+    "acumulou": false,
+    "proximoConcurso": 7,
+    "dataProximoConcurso": "10/11/2003",
+    "localGanhadores": [
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "RJ"
+      },
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "RS"
+      }
+    ],
+    "valorArrecadado": 0.0,
+    "valorAcumuladoConcurso_0_5": 0.0,
+    "valorAcumuladoConcursoEspecial": 0.0,
+    "valorAcumuladoProximoConcurso": 0.0,
+    "valorEstimadoProximoConcurso": 0.0
+  },
+  {
+    "loteria": "lotofacil",
+    "concurso": 7,
+    "data": "10/11/2003",
+    "local": "Caminhão da Sorte em Santo Ângelo, RS",
+    "concursoEspecial": false,
+    "dezenasOrdemSorteio": [
+      "22",
+      "04",
+      "15",
+      "08",
+      "16",
+      "14",
+      "21",
+      "23",
+      "12",
+      "01",
+      "25",
+      "19",
+      "07",
+      "10",
+      "18"
+    ],
+    "dezenas": [
+      "01",
+      "04",
+      "07",
+      "08",
+      "10",
+      "12",
+      "14",
+      "15",
+      "16",
+      "18",
+      "19",
+      "21",
+      "22",
+      "23",
+      "25"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 9,
+        "valorPremio": 104625.29
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 1333,
+        "valorPremio": 301.59
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 25878,
+        "valorPremio": 10.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 206828,
+        "valorPremio": 4.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 967358,
+        "valorPremio": 2.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "Estimativa de prêmio para o próximo concurso (15 ACERTOS): R$ 1.000.000,00.",
+    "acumulou": false,
+    "proximoConcurso": 8,
+    "dataProximoConcurso": "17/11/2003",
+    "localGanhadores": [
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "BA"
+      },
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "DF"
+      },
+      {
+        "ganhadores": 2,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "GO"
+      },
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "MG"
+      },
+      {
+        "ganhadores": 2,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "RJ"
+      },
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "RS"
+      },
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "SP"
+      }
+    ],
+    "valorArrecadado": 0.0,
+    "valorAcumuladoConcurso_0_5": 0.0,
+    "valorAcumuladoConcursoEspecial": 0.0,
+    "valorAcumuladoProximoConcurso": 0.0,
+    "valorEstimadoProximoConcurso": 0.0
+  },
+  {
+    "loteria": "lotofacil",
+    "concurso": 8,
+    "data": "17/11/2003",
+    "local": "Caminhão da Sorte em Rio do Sul, SC",
+    "concursoEspecial": false,
+    "dezenasOrdemSorteio": [
+      "19",
+      "16",
+      "18",
+      "09",
+      "13",
+      "08",
+      "05",
+      "25",
+      "17",
+      "10",
+      "06",
+      "15",
+      "01",
+      "22",
+      "20"
+    ],
+    "dezenas": [
+      "01",
+      "05",
+      "06",
+      "08",
+      "09",
+      "10",
+      "13",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "22",
+      "25"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 1,
+        "valorPremio": 1201958.08
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 256,
+        "valorPremio": 2012.21
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 11414,
+        "valorPremio": 10.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 149037,
+        "valorPremio": 4.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 926910,
+        "valorPremio": 2.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "Estimativa de prêmio próximo concurso: R$1.000.000,00.",
+    "acumulou": false,
+    "proximoConcurso": 9,
+    "dataProximoConcurso": "24/11/2003",
+    "localGanhadores": [
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "BA"
+      }
+    ],
+    "valorArrecadado": 0.0,
+    "valorAcumuladoConcurso_0_5": 0.0,
+    "valorAcumuladoConcursoEspecial": 0.0,
+    "valorAcumuladoProximoConcurso": 0.0,
+    "valorEstimadoProximoConcurso": 0.0
+  },
+  {
+    "loteria": "lotofacil",
+    "concurso": 9,
+    "data": "24/11/2003",
+    "local": "Caminhão da Sorte em ARTUR NOGUEIRA, SP",
+    "concursoEspecial": false,
+    "dezenasOrdemSorteio": [
+      "21",
+      "04",
+      "17",
+      "05",
+      "03",
+      "13",
+      "16",
+      "09",
+      "20",
+      "24",
+      "25",
+      "19",
+      "11",
+      "15",
+      "10"
+    ],
+    "dezenas": [
+      "03",
+      "04",
+      "05",
+      "09",
+      "10",
+      "11",
+      "13",
+      "15",
+      "16",
+      "17",
+      "19",
+      "20",
+      "21",
+      "24",
+      "25"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 3,
+        "valorPremio": 336053.65
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 407,
+        "valorPremio": 1061.6
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 14973,
+        "valorPremio": 10.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 213511,
+        "valorPremio": 4.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 1104328,
+        "valorPremio": 2.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "Estimativa de prêmio (15 ACERTOS) próximo concurso: R$1.100.000,00.",
+    "acumulou": false,
+    "proximoConcurso": 10,
+    "dataProximoConcurso": "01/12/2003",
+    "localGanhadores": [
+      {
+        "ganhadores": 1,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "PR"
+      },
+      {
+        "ganhadores": 2,
+        "municipio": "",
+        "nomeFatansiaUL": "",
+        "serie": "",
+        "posicao": 1,
+        "uf": "SP"
+      }
+    ],
+    "valorArrecadado": 0.0,
+    "valorAcumuladoConcurso_0_5": 0.0,
+    "valorAcumuladoConcursoEspecial": 0.0,
+    "valorAcumuladoProximoConcurso": 0.0,
+    "valorEstimadoProximoConcurso": 0.0
+  },
+  {
+    "loteria": "lotofacil",
+    "concurso": 10,
+    "data": "01/12/2003",
+    "local": "Caminhão da Sorte em Avaré, SP",
+    "concursoEspecial": false,
+    "dezenasOrdemSorteio": [
+      "24",
+      "19",
+      "08",
+      "23",
+      "06",
+      "02",
+      "20",
+      "11",
+      "09",
+      "03",
+      "04",
+      "10",
+      "05",
+      "12",
+      "14"
+    ],
+    "dezenas": [
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "14",
+      "19",
+      "20",
+      "23",
+      "24"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 0,
+        "valorPremio": 0.0
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 380,
+        "valorPremio": 1157.08
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 15767,
+        "valorPremio": 10.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 207355,
+        "valorPremio": 4.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 1186563,
+        "valorPremio": 2.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "Estimativa de prêmio (15 ACERTOS) próximo concurso: R$2.600.000,00.",
+    "acumulou": true,
+    "proximoConcurso": 11,
+    "dataProximoConcurso": "08/12/2003",
+    "localGanhadores": [],
+    "valorArrecadado": 0.0,
+    "valorAcumuladoConcurso_0_5": 0.0,
+    "valorAcumuladoConcursoEspecial": 0.0,
+    "valorAcumuladoProximoConcurso": 1025945.0,
+    "valorEstimadoProximoConcurso": 0.0
+  }
+]
