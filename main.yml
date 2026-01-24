@@ -9,9 +9,12 @@ on:
     - cron: '15 0 * * *'
     
     # 2ª Tentativa: 21:45 BRT (00:45 UTC) - Caso atrase
+    - cron: '35 0 * * *'
+    
+    # 3ª Tentativa: 21:45 BRT (00:45 UTC) - Caso atrase
     - cron: '45 0 * * *'
     
-    # 3ª Tentativa: 22:30 BRT (01:30 UTC) - Garantia final
+    # 4ª Tentativa: 22:30 BRT (01:30 UTC) - Garantia final
     - cron: '30 1 * * *'
     
   workflow_dispatch: # Permite rodar manualmente no botão
