@@ -1,0 +1,37 @@
+name: Atualizador Lotofácil
+
+on:
+  schedule:
+    # Roda todo dia às 21:00 UTC (18:00 no Brasil)
+    - cron: '0 21 * * *'
+  workflow_dispatch: # Permite você clicar num botão para rodar na hora
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write # IMPORTANTE: Permite que o robô salve os arquivos
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v3
+
+      - name: Instalar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Instalar bibliotecas
+        run: pip install -r requirements.txt
+
+      - name: Rodar script
+        run: python update_loto.py
+
+      - name: Salvar mudanças (Commit)
+        run: |
+          git config --global user.name 'LotoBot'
+          git config --global user.email 'bot@noreply.github.com'
+          git add api/*.json
+          # Só commita se houver mudança
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Dados atualizados automagicamente" && git push)
