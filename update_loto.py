@@ -1,24 +1,23 @@
 import requests
 import json
 import os
-import google.generativeai as genai
+from google import genai # NOVA IMPORTAÇÃO (SDK v1.0)
+from google.genai import types # Tipos para configuração
 
 # --- CONFIGURAÇÕES ---
 API_URL = "https://loteriascaixa-api.herokuapp.com/api/lotofacil"
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY") 
 
 def gerar_insights_ia(dados_recentes):
-    print("\n--- Iniciando Geração de Insights com IA ---")
+    print("\n--- Iniciando Geração de Insights com IA (Nova SDK) ---")
     
     if not GEMINI_KEY:
         print("ERRO: Chave GEMINI_API_KEY não encontrada.")
         return
 
     try:
-        genai.configure(api_key=GEMINI_KEY)
-        
-        # Com Python 3.11, este modelo VAI funcionar
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        # NOVA SINTAXE: Cliente direto
+        client = genai.Client(api_key=GEMINI_KEY)
         
         ultimo_concurso = dados_recentes[0] 
         dezenas_ultimo = ultimo_concurso['dezenas']
@@ -31,25 +30,51 @@ def gerar_insights_ia(dados_recentes):
         """
 
         print("Enviando para Gemini Flash...")
-        response = model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
+        
+        # NOVA CHAMADA DE GERAÇÃO
+        response = client.models.generate_content(
+            model='gemini-1.5-flash',
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                response_mime_type='application/json'
+            )
+        )
         
         os.makedirs("api", exist_ok=True)
         with open("api/insights_ia.json", "w", encoding="utf-8") as f:
             f.write(response.text)
-        print("SUCESSO!")
+        print("SUCESSO! Arquivo gerado.")
 
     except Exception as e:
         print(f"ERRO CRÍTICO NA IA: {e}")
 
-# ... (O resto do código de baixar resultados continua igual) ...
 def atualizar_dados():
-    # ... (seu código de download) ...
-    # Lembre de colar a função atualizar_dados completa aqui
-    pass 
+    print("Iniciando atualização...")
+    os.makedirs("api", exist_ok=True)
+
+    try:
+        response = requests.get(API_URL)
+        if response.status_code != 200: return
+        todos_jogos = response.json()
+    except Exception as e:
+        print(f"Erro fatal: {e}")
+        return
+
+    todos_jogos.sort(key=lambda x: x['concurso'])
+
+    # 1. Compacto
+    compacto = [{"c": j['concurso'], "d": [int(d) for d in j['dezenas']]} for j in todos_jogos]
+    with open("api/lotofacil_compacto.json", "w", encoding="utf-8") as f:
+        json.dump(compacto, f, separators=(',', ':'))
+
+    # 2. Detalhado (Últimos 10)
+    ultimos_10 = todos_jogos[-10:] 
+    ultimos_10.reverse() 
+    with open("api/lotofacil_detalhada.json", "w", encoding="utf-8") as f:
+        json.dump(ultimos_10, f, indent=2, ensure_ascii=False)
+
+    # 3. IA
+    gerar_insights_ia(ultimos_10)
 
 if __name__ == "__main__":
-    # Importante: Recrie a função atualizar_dados completa ou mantenha a que você já tem
-    # e apenas chame ela aqui.
-    import sys
-    # Truque para reaproveitar o código anterior sem eu digitar tudo de novo:
-    # Apenas garanta que a função gerar_insights_ia acima substitua a antiga.
+    atualizar_dados()
