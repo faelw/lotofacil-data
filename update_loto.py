@@ -1,53 +1,71 @@
 import requests
 import json
 import os
-from google import genai
-from google.genai import types
+from groq import Groq # <--- Biblioteca Nova
 
 # --- CONFIGURAÇÕES ---
 API_URL = "https://loteriascaixa-api.herokuapp.com/api/lotofacil"
-GEMINI_KEY = os.environ.get("GEMINI_API_KEY") 
+GROQ_KEY = os.environ.get("GROQ_API_KEY") 
 
 def gerar_insights_ia(dados_recentes):
-    print("\n--- Iniciando Geração de Insights com IA ---")
+    print("\n--- Iniciando Geração de Insights (Via Groq/Llama 3) ---")
     
-    if not GEMINI_KEY:
-        print("ERRO: Chave GEMINI_API_KEY não encontrada.")
+    if not GROQ_KEY:
+        print("ERRO: Chave GROQ_API_KEY não encontrada.")
         return
 
     try:
-        # Cria o cliente usando a nova SDK
-        client = genai.Client(api_key=GEMINI_KEY)
+        client = Groq(api_key=GROQ_KEY)
         
         ultimo_concurso = dados_recentes[0] 
         dezenas_ultimo = ultimo_concurso['dezenas']
 
-        prompt = f"""
+        # O Llama 3 precisa de instruções muito claras sobre JSON
+        prompt_sistema = """
         Você é um matemático especialista em loterias.
-        DADOS: {json.dumps(dados_recentes)}
-        TAREFA: Analise estatisticamente o concurso {ultimo_concurso['concurso']}.
-        Gere EXATAMENTE 100 insights curtos (JSON Puro).
+        Sua saída deve ser EXCLUSIVAMENTE um objeto JSON válido.
+        Não escreva nada antes ou depois do JSON.
         """
 
-        print("Enviando para Gemini (Versão 001)...")
+        prompt_usuario = f"""
+        DADOS (Últimos 10 resultados): {json.dumps(dados_recentes)}
         
-        # AQUI ESTÁ O TRUQUE: Usamos o nome específico 'gemini-1.5-flash-001'
-        response = client.models.generate_content(
-            model='gemini-1.5-flash-001', 
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type='application/json'
-            )
+        TAREFA: 
+        1. Analise o concurso {ultimo_concurso['concurso']} (Dezenas: {dezenas_ultimo}).
+        2. Gere 100 insights curtos sobre padrões, repetidas, pares/ímpares, primos, soma, quentes/frias.
+        
+        FORMATO JSON OBRIGATÓRIO:
+        {{
+            "analise_referencia": "{ultimo_concurso['concurso']}",
+            "insights": [
+                {{ "id": 1, "texto": "..." }},
+                ... ate 100 ...
+            ]
+        }}
+        """
+
+        print("Enviando para Llama 3 (70b Versatile)...")
+        
+        chat_completion = client.chat.completions.create(
+            messages=[
+                {"role": "system", "content": prompt_sistema},
+                {"role": "user", "content": prompt_usuario}
+            ],
+            model="llama-3.3-70b-versatile", # Modelo muito inteligente e rápido
+            temperature=0.5, # Equilíbrio entre criatividade e precisão
+            response_format={"type": "json_object"} # Força sair JSON perfeito
         )
+
+        conteudo_json = chat_completion.choices[0].message.content
         
         os.makedirs("api", exist_ok=True)
         with open("api/insights_ia.json", "w", encoding="utf-8") as f:
-            f.write(response.text)
-        print("SUCESSO! Arquivo gerado.")
+            f.write(conteudo_json)
+            
+        print("SUCESSO! Arquivo 'api/insights_ia.json' gerado pela Groq.")
 
     except Exception as e:
         print(f"ERRO CRÍTICO NA IA: {e}")
-        print("DICA: Se o erro persistir, verifique se sua API Key foi criada no Google AI Studio.")
 
 def atualizar_dados():
     print("Iniciando atualização...")
