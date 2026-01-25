@@ -28,7 +28,7 @@ jobs:
         run: |
           # O -U força a pegar a versão mais nova compatível com Python 3.11
           pip install requests
-          pip install -U google-generativeai
+          pip install google-genai
 
       - name: Rodar script
         env:
