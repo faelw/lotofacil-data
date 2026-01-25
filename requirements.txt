@@ -1,2 +1,2 @@
-requests
-google-generativeai
+pip install requests
+pip install --upgrade google-generativeai
