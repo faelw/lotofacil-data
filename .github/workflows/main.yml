@@ -6,7 +6,7 @@ on:
     # O servidor usa UTC (+3h em relação ao Brasil)
     
     # 1ª Tentativa: 21:15 BRT (00:15 UTC do dia seguinte)
-    - cron: '15 0 * * *'
+    - cron: '25 0 * * *'
     
     # 2ª Tentativa: 21:45 BRT (00:45 UTC) - Caso atrase
     - cron: '35 0 * * *'
