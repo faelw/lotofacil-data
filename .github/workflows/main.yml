@@ -1,30 +1,21 @@
-name: Atualizador Lotofácil
+name: Atualizador Lotofacil
 
 on:
   schedule:
-    # Horários ajustados para o sorteio das 21h (Brasil)
-    # O servidor usa UTC (+3h em relação ao Brasil)
-    
-    # 1ª Tentativa: 21:15 BRT (00:15 UTC do dia seguinte)
+    # 1ª Tentativa: 21:25 BRT (00:25 UTC)
     - cron: '25 0 * * *'
-    
-    # 2ª Tentativa: 21:45 BRT (00:45 UTC) - Caso atrase
+    # 2ª Tentativa: 21:35 BRT (00:35 UTC)
     - cron: '35 0 * * *'
-    
-    # 3ª Tentativa: 21:45 BRT (00:45 UTC) - Caso atrase
-    - cron: '45 0 * * *'
-    
-    # 4ª Tentativa: 22:30 BRT (01:30 UTC) - Garantia final
+    # 3ª Tentativa: 22:30 BRT (01:30 UTC) - Garantia
     - cron: '30 1 * * *'
-    - cron: '45 12 * * *'
-  workflow_dispatch: # Permite rodar manualmente no botão
+  workflow_dispatch: # Botão manual
 
 jobs:
   build:
     runs-on: ubuntu-latest
     
     permissions:
-      contents: write # IMPORTANTE: Permite salvar os arquivos
+      contents: write # ESSENCIAL: Permite o bot salvar o arquivo
 
     steps:
       - name: Baixar repositório
@@ -36,18 +27,21 @@ jobs:
           python-version: '3.9'
 
       - name: Instalar bibliotecas
-        run: pip install -r requirements.txt
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          # Garante as libs mesmo se esquecer o requirements.txt
+          pip install requests google-generativeai 
 
-      - name: Rodar script
+      - name: Rodar script (Resultados + IA)
         env:
-          # AQUI: Injeta a chave da IA que você salvou nos Secrets
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} 
         run: python update_loto.py
 
-      - name: Salvar mudanças (Commit)
+      - name: Salvar mudanças
         run: |
           git config --global user.name 'LotoBot'
           git config --global user.email 'bot@noreply.github.com'
+          # Adiciona tudo que for JSON dentro da pasta api/
           git add api/*.json
-          # Só commita se houver mudança nos arquivos
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Dados atualizados automagicamente" && git push)
+          # Só faz commit se algo mudou
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Dados atualizados: Resultados e Insights IA" && git push)
