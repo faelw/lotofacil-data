@@ -28,9 +28,10 @@ jobs:
 
       - name: Instalar bibliotecas
         run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          # Garante as libs mesmo se esquecer o requirements.txt
-          pip install requests google-generativeai 
+          # AQUI ESTÁ A CORREÇÃO:
+          # O "-U" força a atualização para a versão que suporta o Gemini Flash
+          pip install requests
+          pip install -U google-generativeai
 
       - name: Rodar script (Resultados + IA)
         env:
