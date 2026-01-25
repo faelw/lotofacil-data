@@ -1,22 +1,22 @@
 import requests
 import json
 import os
-from google import genai # NOVA IMPORTAÇÃO (SDK v1.0)
-from google.genai import types # Tipos para configuração
+from google import genai
+from google.genai import types
 
 # --- CONFIGURAÇÕES ---
 API_URL = "https://loteriascaixa-api.herokuapp.com/api/lotofacil"
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY") 
 
 def gerar_insights_ia(dados_recentes):
-    print("\n--- Iniciando Geração de Insights com IA (Nova SDK) ---")
+    print("\n--- Iniciando Geração de Insights com IA ---")
     
     if not GEMINI_KEY:
         print("ERRO: Chave GEMINI_API_KEY não encontrada.")
         return
 
     try:
-        # NOVA SINTAXE: Cliente direto
+        # Cria o cliente usando a nova SDK
         client = genai.Client(api_key=GEMINI_KEY)
         
         ultimo_concurso = dados_recentes[0] 
@@ -29,11 +29,11 @@ def gerar_insights_ia(dados_recentes):
         Gere EXATAMENTE 100 insights curtos (JSON Puro).
         """
 
-        print("Enviando para Gemini Flash...")
+        print("Enviando para Gemini (Versão 001)...")
         
-        # NOVA CHAMADA DE GERAÇÃO
+        # AQUI ESTÁ O TRUQUE: Usamos o nome específico 'gemini-1.5-flash-001'
         response = client.models.generate_content(
-            model='gemini-1.5-flash',
+            model='gemini-1.5-flash-001', 
             contents=prompt,
             config=types.GenerateContentConfig(
                 response_mime_type='application/json'
@@ -47,6 +47,7 @@ def gerar_insights_ia(dados_recentes):
 
     except Exception as e:
         print(f"ERRO CRÍTICO NA IA: {e}")
+        print("DICA: Se o erro persistir, verifique se sua API Key foi criada no Google AI Studio.")
 
 def atualizar_dados():
     print("Iniciando atualização...")
