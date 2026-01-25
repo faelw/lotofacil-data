@@ -16,7 +16,7 @@ on:
     
     # 4ª Tentativa: 22:30 BRT (01:30 UTC) - Garantia final
     - cron: '30 1 * * *'
-    - cron: '09 12 * * *'
+    - cron: '30 12 * * *'
   workflow_dispatch: # Permite rodar manualmente no botão
 
 jobs:
