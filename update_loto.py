@@ -17,12 +17,10 @@ def gerar_insights_ia(dados_recentes):
     try:
         genai.configure(api_key=GEMINI_KEY)
         
-        # Tenta usar o Flash (mais rápido). Se der erro de versão, usa o Pro.
-        try:
-            model = genai.GenerativeModel('gemini-1.5-flash')
-        except:
-            print("Aviso: Modelo Flash não disponível, tentando Gemini Pro...")
-            model = genai.GenerativeModel('gemini-pro')
+        # --- ALTERAÇÃO DA SOLUÇÃO ---
+        # Mudamos para 'gemini-pro'. Ele é mais estável e evita o erro 404
+        # em ambientes que não têm a biblioteca 'beta' mais recente.
+        model = genai.GenerativeModel('gemini-pro')
         
         ultimo_concurso = dados_recentes[0] 
         dezenas_ultimo = ultimo_concurso['dezenas']
@@ -42,14 +40,14 @@ def gerar_insights_ia(dados_recentes):
             "insights": [
                 {{ "id": 1, "texto": "..." }},
                 ...
+                {{ "id": 100, "texto": "..." }}
             ]
         }}
         """
 
-        print("Enviando prompt para o Gemini...")
+        print(f"Enviando prompt para o modelo Gemini Pro...")
         response = model.generate_content(prompt, generation_config={"response_mime_type": "application/json"})
         
-        # Garante que a pasta existe antes de salvar
         os.makedirs("api", exist_ok=True)
         
         with open("api/insights_ia.json", "w", encoding="utf-8") as f:
@@ -58,6 +56,7 @@ def gerar_insights_ia(dados_recentes):
         print("SUCESSO: Arquivo 'api/insights_ia.json' gerado.")
 
     except Exception as e:
+        # Se der erro, ele imprime mas não quebra o script
         print(f"ERRO CRÍTICO NA IA: {e}")
 
 def atualizar_dados():
