@@ -1,68 +1,67 @@
 import requests
 import json
 import os
-from groq import Groq # <--- Biblioteca Nova
+from google import genai
+from google.genai import types
 
 # --- CONFIGURAÇÕES ---
 API_URL = "https://loteriascaixa-api.herokuapp.com/api/lotofacil"
-GROQ_KEY = os.environ.get("GROQ_API_KEY") 
+GEMINI_KEY = os.environ.get("GEMINI_API_KEY") 
 
 def gerar_insights_ia(dados_recentes):
-    print("\n--- Iniciando Geração de Insights (Via Groq/Llama 3) ---")
+    print("\n--- Iniciando Geração de Insights (Via Google Gemini) ---")
     
-    if not GROQ_KEY:
-        print("ERRO: Chave GROQ_API_KEY não encontrada.")
+    if not GEMINI_KEY:
+        print("ERRO: Chave GEMINI_API_KEY não encontrada.")
         return
 
     try:
-        client = Groq(api_key=GROQ_KEY)
+        # Inicializa o cliente com a nova biblioteca
+        client = genai.Client(api_key=GEMINI_KEY)
         
         ultimo_concurso = dados_recentes[0] 
         dezenas_ultimo = ultimo_concurso['dezenas']
 
-        # O Llama 3 precisa de instruções muito claras sobre JSON
-        prompt_sistema = """
+        prompt = f"""
         Você é um matemático especialista em loterias.
-        Sua saída deve ser EXCLUSIVAMENTE um objeto JSON válido.
-        Não escreva nada antes ou depois do JSON.
-        """
+        
+        DADOS DE ENTRADA (Últimos 10 resultados): 
+        {json.dumps(dados_recentes)}
+        
+        TAREFA:
+        1. Analise estatisticamente o concurso {ultimo_concurso['concurso']} (Dezenas: {dezenas_ultimo}).
+        2. Gere EXATAMENTE 100 insights curtos, objetivos e acionáveis sobre padrões, repetições, ciclos, primos, etc.
 
-        prompt_usuario = f"""
-        DADOS (Últimos 10 resultados): {json.dumps(dados_recentes)}
-        
-        TAREFA: 
-        1. Analise o concurso {ultimo_concurso['concurso']} (Dezenas: {dezenas_ultimo}).
-        2. Gere 100 insights curtos sobre padrões, repetidas, pares/ímpares, primos, soma, quentes/frias.
-        
-        FORMATO JSON OBRIGATÓRIO:
+        FORMATO DE SAÍDA OBRIGATÓRIO (JSON PURO):
         {{
             "analise_referencia": "{ultimo_concurso['concurso']}",
             "insights": [
-                {{ "id": 1, "texto": "..." }},
+                {{ "id": 1, "texto": "Insight aqui..." }},
                 ... ate 100 ...
             ]
         }}
         """
 
-        print("Enviando para Llama 3 (70b Versatile)...")
+        print("Enviando para Gemini 1.5 Flash...")
         
-        chat_completion = client.chat.completions.create(
-            messages=[
-                {"role": "system", "content": prompt_sistema},
-                {"role": "user", "content": prompt_usuario}
-            ],
-            model="llama-3.3-70b-versatile", # Modelo muito inteligente e rápido
-            temperature=0.5, # Equilíbrio entre criatividade e precisão
-            response_format={"type": "json_object"} # Força sair JSON perfeito
+        # Chamada usando a nova SDK
+        response = client.models.generate_content(
+            model='gemini-1.5-flash',
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                response_mime_type='application/json',
+                temperature=0.7
+            )
         )
-
-        conteudo_json = chat_completion.choices[0].message.content
         
-        os.makedirs("api", exist_ok=True)
-        with open("api/insights_ia.json", "w", encoding="utf-8") as f:
-            f.write(conteudo_json)
-            
-        print("SUCESSO! Arquivo 'api/insights_ia.json' gerado pela Groq.")
+        # Verifica se houve resposta válida
+        if response.text:
+            os.makedirs("api", exist_ok=True)
+            with open("api/insights_ia.json", "w", encoding="utf-8") as f:
+                f.write(response.text)
+            print("SUCESSO! Arquivo 'api/insights_ia.json' gerado pelo Gemini.")
+        else:
+            print("AVISO: O Gemini retornou uma resposta vazia.")
 
     except Exception as e:
         print(f"ERRO CRÍTICO NA IA: {e}")
