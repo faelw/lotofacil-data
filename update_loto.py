@@ -9,62 +9,59 @@ API_URL = "https://loteriascaixa-api.herokuapp.com/api/lotofacil"
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY") 
 
 def gerar_insights_ia(dados_recentes):
-    print("\n--- Iniciando Geração de Insights (Via Google Gemini) ---")
+    print("\n--- Iniciando Geração de Insights (Estratégia Multi-Modelo) ---")
     
     if not GEMINI_KEY:
         print("ERRO: Chave GEMINI_API_KEY não encontrada.")
         return
 
-    try:
-        # Inicializa o cliente com a nova biblioteca
-        client = genai.Client(api_key=GEMINI_KEY)
-        
-        ultimo_concurso = dados_recentes[0] 
-        dezenas_ultimo = ultimo_concurso['dezenas']
+    # Lista de tentativas. Se um falhar, tenta o próximo.
+    modelos_para_tentar = [
+        'gemini-1.5-flash',       # Tentativa 1: O padrão atual
+        'gemini-1.5-flash-001',   # Tentativa 2: Versão específica
+        'gemini-1.5-pro',         # Tentativa 3: Versão mais potente
+        'gemini-2.0-flash-exp',   # Tentativa 4: Experimental novo
+        'gemini-pro'              # Tentativa 5: O clássico (quase impossível falhar)
+    ]
 
-        prompt = f"""
-        Você é um matemático especialista em loterias.
-        
-        DADOS DE ENTRADA (Últimos 10 resultados): 
-        {json.dumps(dados_recentes)}
-        
-        TAREFA:
-        1. Analise estatisticamente o concurso {ultimo_concurso['concurso']} (Dezenas: {dezenas_ultimo}).
-        2. Gere EXATAMENTE 100 insights curtos, objetivos e acionáveis sobre padrões, repetições, ciclos, primos, etc.
+    client = genai.Client(api_key=GEMINI_KEY)
+    
+    ultimo_concurso = dados_recentes[0] 
+    dezenas_ultimo = ultimo_concurso['dezenas']
 
-        FORMATO DE SAÍDA OBRIGATÓRIO (JSON PURO):
-        {{
-            "analise_referencia": "{ultimo_concurso['concurso']}",
-            "insights": [
-                {{ "id": 1, "texto": "Insight aqui..." }},
-                ... ate 100 ...
-            ]
-        }}
-        """
+    prompt = f"""
+    Você é um matemático especialista em loterias.
+    DADOS: {json.dumps(dados_recentes)}
+    TAREFA: Analise estatisticamente o concurso {ultimo_concurso['concurso']}.
+    Gere EXATAMENTE 100 insights curtos (JSON Puro).
+    """
 
-        print("Enviando para Gemini 1.5 Flash...")
-        
-        # Chamada usando a nova SDK
-        response = client.models.generate_content(
-            model='gemini-1.5-flash',
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type='application/json',
-                temperature=0.7
+    for modelo_atual in modelos_para_tentar:
+        try:
+            print(f"Tentando conectar com o modelo: {modelo_atual}...")
+            
+            response = client.models.generate_content(
+                model=modelo_atual,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_mime_type='application/json',
+                    temperature=0.7
+                )
             )
-        )
-        
-        # Verifica se houve resposta válida
-        if response.text:
-            os.makedirs("api", exist_ok=True)
-            with open("api/insights_ia.json", "w", encoding="utf-8") as f:
-                f.write(response.text)
-            print("SUCESSO! Arquivo 'api/insights_ia.json' gerado pelo Gemini.")
-        else:
-            print("AVISO: O Gemini retornou uma resposta vazia.")
+            
+            # Se chegou aqui, funcionou!
+            if response.text:
+                os.makedirs("api", exist_ok=True)
+                with open("api/insights_ia.json", "w", encoding="utf-8") as f:
+                    f.write(response.text)
+                print(f"SUCESSO! Insights gerados usando o modelo: {modelo_atual}")
+                return # Sai da função, pois já conseguiu
 
-    except Exception as e:
-        print(f"ERRO CRÍTICO NA IA: {e}")
+        except Exception as e:
+            # Se der erro 404 ou qualquer outro, apenas avisa e deixa o loop continuar
+            print(f"Falha no modelo {modelo_atual}. Tentando o próximo... (Erro: {e})")
+
+    print("ERRO FINAL: Nenhum dos modelos funcionou. Verifique sua API Key.")
 
 def atualizar_dados():
     print("Iniciando atualização...")
