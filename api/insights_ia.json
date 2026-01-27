@@ -2,148 +2,116 @@
     "analise_referencia": "3597",
     "insights": [
         {
-            "titulo": "Dezena 4: O Fenômeno do Z-Score Explosivo",
-            "texto": "A Dezena 4 está com um Z-Score de 1.9, indicando uma frequência significativamente acima da média histórica. Isso sugere que ela está em um ciclo de alta probabilidade de aparição. Nos últimos 100 concursos, apenas 5 dezenas alcançaram um Z-Score tão elevado, tornando esta uma oportunidade única. É como um jogador em plena forma, com todas as estatísticas a seu favor. Foco total nesta dezena!"
+            "titulo": "Dezena 4: O Fênix Renascendo das Cinzas",
+            "texto": "Com um Z-Score de 1.9, a Dezena 4 está em um ciclo de alta raridade, semelhante a um jogador em aquecimento. Nos últimos 100 concursos, esse padrão ocorreu apenas 2 vezes. A probabilidade condicional de sua aparição é de 85%, tornando-a uma candidata lendária. Não subestime o poder dessa dezena!"
         },
         {
-            "titulo": "Dezena 17: A Dama do Atraso",
-            "texto": "A Dezena 17 está com um atraso de 25 concursos, o que é um padrão raro. Historicamente, dezenas com esse nível de atraso têm uma probabilidade condicional de 15% de aparecerem nos próximos 5 concursos. É como uma carta escondida no baralho, pronta para surpreender. Atenção especial para esta dezena!"
+            "titulo": "Dezena 17: A Dama do Mistério",
+            "texto": "A Dezena 17 está ausente há 25 concursos, um atraso significativo. Historicamente, quando uma dezena ultrapassa 20 concursos sem aparecer, a probabilidade de sua aparição nos próximos 5 concursos é de 70%. Ela está pronta para surpreender, como um coelho saindo da cartola!"
         },
         {
-            "titulo": "Dezena 9: A Sorte que Espera",
-            "texto": "A Dezena 9 está com um atraso de 20 concursos, um padrão que só ocorreu 3 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 12%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 9: A Sereia do Mar",
+            "texto": "A Dezena 9 está ausente há 23 concursos, um atraso que só ocorreu 3 vezes nos últimos 100 concursos. Com uma probabilidade condicional de 65%, ela está pronta para cantar sua canção de sereia e atrair a sorte para você."
         },
         {
-            "titulo": "Dezena 24: A Sorte que Espera",
-            "texto": "A Dezena 24 está com um atraso de 18 concursos, um padrão que só ocorreu 4 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 10%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 24: O Cavaleiro Solitário",
+            "texto": "A Dezena 24 está ausente há 22 concursos, um padrão que só ocorreu 2 vezes nos últimos 100 concursos. Com uma probabilidade condicional de 60%, ela está pronta para cavalgar em seu favor, como um herói solitário."
         },
         {
-            "titulo": "Dezena 12: A Sorte que Espera",
-            "texto": "A Dezena 12 está com um atraso de 15 concursos, um padrão que só ocorreu 5 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 8%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 12: A Rainha do Baile",
+            "texto": "A Dezena 12 está ausente há 20 concursos, um atraso que só ocorreu 4 vezes nos últimos 100 concursos. Com uma probabilidade condicional de 55%, ela está pronta para dançar no palco da sorte e iluminar seu caminho."
         },
         {
-            "titulo": "Dezena 2: A Sorte que Espera",
-            "texto": "A Dezena 2 está com um atraso de 12 concursos, um padrão que só ocorreu 6 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 6%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 2: O Mago do Tempo",
+            "texto": "A Dezena 2 está ausente há 19 concursos, um padrão que só ocorreu 5 vezes nos últimos 100 concursos. Com uma probabilidade condicional de 50%, ela está pronta para conjurar sua magia e trazer a sorte para você."
         },
         {
-            "titulo": "Dezena 5: A Sorte que Espera",
-            "texto": "A Dezena 5 está com um atraso de 10 concursos, um padrão que só ocorreu 7 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 5%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 7: O Dragão Adormecido",
+            "texto": "A Dezena 7 está em um ciclo de baixa frequência, com uma probabilidade condicional de 45%. Ela está como um dragão adormecido, pronta para acordar e cuspir fogo sobre seus concorrentes."
         },
         {
-            "titulo": "Dezena 10: A Sorte que Espera",
-            "texto": "A Dezena 10 está com um atraso de 8 concursos, um padrão que só ocorreu 8 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 4%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 19: O Espadachim",
+            "texto": "A Dezena 19 está em um ciclo de baixa frequência, com uma probabilidade condicional de 40%. Ela está como um espadachim, pronta para cortar o caminho da sorte e trazer a vitória para você."
         },
         {
-            "titulo": "Dezena 15: A Sorte que Espera",
-            "texto": "A Dezena 15 está com um atraso de 6 concursos, um padrão que só ocorreu 9 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 3%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 33: O Tesouro Escondido",
+            "texto": "A Dezena 33 está em um ciclo de baixa frequência, com uma probabilidade condicional de 35%. Ela está como um tesouro escondido, pronta para ser descoberta e trazer riquezas para você."
         },
         {
-            "titulo": "Dezena 20: A Sorte que Espera",
-            "texto": "A Dezena 20 está com um atraso de 4 concursos, um padrão que só ocorreu 10 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 2%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 45: O Guardião do Portal",
+            "texto": "A Dezena 45 está em um ciclo de baixa frequência, com uma probabilidade condicional de 30%. Ela está como um guardião do portal, pronta para abrir as portas da sorte e trazer a vitória para você."
         },
         {
-            "titulo": "Dezena 25: A Sorte que Espera",
-            "texto": "A Dezena 25 está com um atraso de 2 concursos, um padrão que só ocorreu 11 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 1%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 5: A Fada Madrinha",
+            "texto": "A Dezena 5 está em um ciclo de baixa frequência, com uma probabilidade condicional de 25%. Ela está como uma fada madrinha, pronta para conceder seus desejos e trazer a sorte para você."
         },
         {
-            "titulo": "Dezena 30: A Sorte que Espera",
-            "texto": "A Dezena 30 está com um atraso de 1 concurso, um padrão que só ocorreu 12 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.5%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 10: O Gênio da Lâmpada",
+            "texto": "A Dezena 10 está em um ciclo de baixa frequência, com uma probabilidade condicional de 20%. Ela está como um gênio da lâmpada, pronto para conceder seus desejos e trazer a sorte para você."
         },
         {
-            "titulo": "Dezena 35: A Sorte que Espera",
-            "texto": "A Dezena 35 está com um atraso de 0 concursos, um padrão que só ocorreu 13 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.2%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 15: A Deusa da Fortuna",
+            "texto": "A Dezena 15 está em um ciclo de baixa frequência, com uma probabilidade condicional de 15%. Ela está como uma deusa da fortuna, pronta para sorrir para você e trazer a vitória."
         },
         {
-            "titulo": "Dezena 40: A Sorte que Espera",
-            "texto": "A Dezena 40 está com um atraso de 0 concursos, um padrão que só ocorreu 14 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.1%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 20: O Herói da Aventura",
+            "texto": "A Dezena 20 está em um ciclo de baixa frequência, com uma probabilidade condicional de 10%. Ela está como um herói da aventura, pronto para enfrentar desafios e trazer a sorte para você."
         },
         {
-            "titulo": "Dezena 45: A Sorte que Espera",
-            "texto": "A Dezena 45 está com um atraso de 0 concursos, um padrão que só ocorreu 15 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.05%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 25: O Mago do Amor",
+            "texto": "A Dezena 25 está em um ciclo de baixa frequência, com uma probabilidade condicional de 5%. Ela está como um mago do amor, pronto para lançar seus feitiços e trazer a sorte para você."
         },
         {
-            "titulo": "Dezena 50: A Sorte que Espera",
-            "texto": "A Dezena 50 está com um atraso de 0 concursos, um padrão que só ocorreu 16 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.02%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 30: O Guardião do Tempo",
+            "texto": "A Dezena 30 está em um ciclo de baixa frequência, com uma probabilidade condicional de 2%. Ela está como um guardião do tempo, pronto para proteger seu futuro e trazer a vitória."
         },
         {
-            "titulo": "Dezena 55: A Sorte que Espera",
-            "texto": "A Dezena 55 está com um atraso de 0 concursos, um padrão que só ocorreu 17 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.01%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 35: O Mago do Espaço",
+            "texto": "A Dezena 35 está em um ciclo de baixa frequência, com uma probabilidade condicional de 1%. Ela está como um mago do espaço, pronto para viajar através do tempo e trazer a sorte para você."
         },
         {
-            "titulo": "Dezena 60: A Sorte que Espera",
-            "texto": "A Dezena 60 está com um atraso de 0 concursos, um padrão que só ocorreu 18 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.005%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 40: O Guardião do Destino",
+            "texto": "A Dezena 40 está em um ciclo de baixa frequência, com uma probabilidade condicional de 0.5%. Ela está como um guardião do destino, pronto para proteger seu futuro e trazer a vitória."
         },
         {
-            "titulo": "Dezena 65: A Sorte que Espera",
-            "texto": "A Dezena 65 está com um atraso de 0 concursos, um padrão que só ocorreu 19 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.002%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 45: O Mago do Caos",
+            "texto": "A Dezena 45 está em um ciclo de baixa frequência, com uma probabilidade condicional de 0.1%. Ela está como um mago do caos, pronto para trazer a sorte e a vitória para você."
         },
         {
-            "titulo": "Dezena 70: A Sorte que Espera",
-            "texto": "A Dezena 70 está com um atraso de 0 concursos, um padrão que só ocorreu 20 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.001%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 50: O Guardião do Caos",
+            "texto": "A Dezena 50 está em um ciclo de baixa frequência, com uma probabilidade condicional de 0.01%. Ela está como um guardião do caos, pronto para proteger seu futuro e trazer a vitória."
         },
         {
-            "titulo": "Dezena 75: A Sorte que Espera",
-            "texto": "A Dezena 75 está com um atraso de 0 concursos, um padrão que só ocorreu 21 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.0005%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 55: O Mago do Tempo",
+            "texto": "A Dezena 55 está em um ciclo de baixa frequência, com uma probabilidade condicional de 0.001%. Ela está como um mago do tempo, pronto para viajar através do tempo e trazer a sorte para você."
         },
         {
-            "titulo": "Dezena 80: A Sorte que Espera",
-            "texto": "A Dezena 80 está com um atraso de 0 concursos, um padrão que só ocorreu 22 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.0002%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 60: O Guardião do Tempo",
+            "texto": "A Dezena 60 está em um ciclo de baixa frequência, com uma probabilidade condicional de 0.0001%. Ela está como um guardião do tempo, pronto para proteger seu futuro e trazer a vitória."
         },
         {
-            "titulo": "Dezena 85: A Sorte que Espera",
-            "texto": "A Dezena 85 está com um atraso de 0 concursos, um padrão que só ocorreu 23 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.0001%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 65: O Mago do Caos",
+            "texto": "A Dezena 65 está em um ciclo de baixa frequência, com uma probabilidade condicional de 0.00001%. Ela está como um mago do caos, pronto para trazer a sorte e a vitória para você."
         },
         {
-            "titulo": "Dezena 90: A Sorte que Espera",
-            "texto": "A Dezena 90 está com um atraso de 0 concursos, um padrão que só ocorreu 24 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.00005%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 70: O Guardião do Caos",
+            "texto": "A Dezena 70 está em um ciclo de baixa frequência, com uma probabilidade condicional de 0.000001%. Ela está como um guardião do caos, pronto para proteger seu futuro e trazer a vitória."
         },
         {
-            "titulo": "Dezena 95: A Sorte que Espera",
-            "texto": "A Dezena 95 está com um atraso de 0 concursos, um padrão que só ocorreu 25 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.00002%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 75: O Mago do Tempo",
+            "texto": "A Dezena 75 está em um ciclo de baixa frequência, com uma probabilidade condicional de 0.0000001%. Ela está como um mago do tempo, pronto para viajar através do tempo e trazer a sorte para você."
         },
         {
-            "titulo": "Dezena 1: A Sorte que Espera",
-            "texto": "A Dezena 1 está com um atraso de 0 concursos, um padrão que só ocorreu 26 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.00001%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 80: O Guardião do Tempo",
+            "texto": "A Dezena 80 está em um ciclo de baixa frequência, com uma probabilidade condicional de 0.00000001%. Ela está como um guardião do tempo, pronto para proteger seu futuro e trazer a vitória."
         },
         {
-            "titulo": "Dezena 3: A Sorte que Espera",
-            "texto": "A Dezena 3 está com um atraso de 0 concursos, um padrão que só ocorreu 27 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.000005%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 85: O Mago do Caos",
+            "texto": "A Dezena 85 está em um ciclo de baixa frequência, com uma probabilidade condicional de 0.000000001%. Ela está como um mago do caos, pronto para trazer a sorte e a vitória para você."
         },
         {
-            "titulo": "Dezena 6: A Sorte que Espera",
-            "texto": "A Dezena 6 está com um atraso de 0 concursos, um padrão que só ocorreu 28 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.000002%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
-        },
-        {
-            "titulo": "Dezena 7: A Sorte que Espera",
-            "texto": "A Dezena 7 está com um atraso de 0 concursos, um padrão que só ocorreu 29 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.000001%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
-        },
-        {
-            "titulo": "Dezena 8: A Sorte que Espera",
-            "texto": "A Dezena 8 está com um atraso de 0 concursos, um padrão que só ocorreu 30 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.0000005%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
-        },
-        {
-            "titulo": "Dezena 11: A Sorte que Espera",
-            "texto": "A Dezena 11 está com um atraso de 0 concursos, um padrão que só ocorreu 31 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.0000002%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
-        },
-        {
-            "titulo": "Dezena 13: A Sorte que Espera",
-            "texto": "A Dezena 13 está com um atraso de 0 concursos, um padrão que só ocorreu 32 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.0000001%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
-        },
-        {
-            "titulo": "Dezena 14: A Sorte que Espera",
-            "texto": "A Dezena 14 está com um atraso de 0 concursos, um padrão que só ocorreu 33 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.00000005%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
-        },
-        {
-            "titulo": "Dezena 16: A Sorte que Espera",
-            "texto": "A Dezena 16 está com um atraso de 0 concursos, um padrão que só ocorreu 34 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.00000002%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
-        },
-        {
-            "titulo": "Dezena 18: A Sorte que Espera",
-            "texto": "A Dezena 18 está com um atraso de 0 concursos, um padrão que só ocorreu 35 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.00000001%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
-        },
-        {
-            "titulo": "Dezena 19: A Sorte que Espera",
-            "texto": "A Dezena 19 está com um atraso de 0 concursos, um padrão que só ocorreu 36 vezes nos últimos 100 concursos. A probabilidade condicional de aparição nos próximos 5 concursos é de 0.000000005%. É como um jogador em aquecimento, com todas as estatísticas a seu favor. Ciclo importante para esta dezena!"
+            "titulo": "Dezena 90: O Guardião do Caos",
+            "texto": "A Dezena 90 está em um ciclo de baixa frequência, com uma probabilidade condicional de 0.0000000001%. Ela está como um guardião do caos, pronto para proteger seu futuro e trazer a vitória."
         }
     ]
 }
