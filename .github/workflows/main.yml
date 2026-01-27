@@ -18,6 +18,7 @@ jobs:
       - name: Baixar repositório
         uses: actions/checkout@v3
 
+      # MUDANÇA IMPORTANTE: Usamos Python 3.11 para suportar a nova biblioteca do Google
       - name: Instalar Python
         uses: actions/setup-python@v4
         with:
@@ -26,11 +27,13 @@ jobs:
       - name: Instalar bibliotecas
         run: |
           pip install requests
-          pip install groq  # <--- MUDANÇA: Instalamos a biblioteca da Groq
+          # Instalamos a NOVA biblioteca oficial do Google (SDK v1.0)
+          pip install google-genai
 
       - name: Rodar script
         env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }} # <--- MUDANÇA: Nova chave
+          # Voltamos a usar a chave do Gemini
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} 
         run: python update_loto.py
 
       - name: Salvar mudanças
@@ -38,4 +41,4 @@ jobs:
           git config --global user.name 'LotoBot'
           git config --global user.email 'bot@noreply.github.com'
           git add api/*.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Dados atualizados via Groq" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Dados atualizados via Gemini" && git push)
