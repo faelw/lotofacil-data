@@ -1,67 +1,79 @@
 import requests
 import json
 import os
-from google import genai
-from google.genai import types
+from groq import Groq
 
 # --- CONFIGURAÇÕES ---
 API_URL = "https://loteriascaixa-api.herokuapp.com/api/lotofacil"
-GEMINI_KEY = os.environ.get("GEMINI_API_KEY") 
+GROQ_KEY = os.environ.get("GROQ_API_KEY") 
 
 def gerar_insights_ia(dados_recentes):
-    print("\n--- Iniciando Geração de Insights (Estratégia Multi-Modelo) ---")
+    print("\n--- Iniciando Geração de Insights (Via Groq/Llama 3) ---")
     
-    if not GEMINI_KEY:
-        print("ERRO: Chave GEMINI_API_KEY não encontrada.")
+    if not GROQ_KEY:
+        print("ERRO: Chave GROQ_API_KEY não encontrada.")
         return
 
-    # Lista de tentativas. Se um falhar, tenta o próximo.
-    modelos_para_tentar = [
-        'gemini-1.5-flash',       # Tentativa 1: O padrão atual
-        'gemini-1.5-flash-001',   # Tentativa 2: Versão específica
-        'gemini-1.5-pro',         # Tentativa 3: Versão mais potente
-        'gemini-2.0-flash-exp',   # Tentativa 4: Experimental novo
-        'gemini-pro'              # Tentativa 5: O clássico (quase impossível falhar)
-    ]
+    try:
+        client = Groq(api_key=GROQ_KEY)
+        
+        ultimo_concurso = dados_recentes[0] 
+        dezenas_ultimo = ultimo_concurso['dezenas']
 
-    client = genai.Client(api_key=GEMINI_KEY)
-    
-    ultimo_concurso = dados_recentes[0] 
-    dezenas_ultimo = ultimo_concurso['dezenas']
+        # Instruções rígidas para garantir o formato que o App espera
+        prompt_sistema = """
+        Você é um matemático especialista em loterias faça   uma analise detalhada para apostadores no geral.
+        Sua saída deve ser EXCLUSIVAMENTE um objeto JSON válido.
+        Não use Markdown (```json). Apenas o texto cru do JSON.
+        """
 
-    prompt = f"""
-    Você é um matemático especialista em loterias.
-    DADOS: {json.dumps(dados_recentes)}
-    TAREFA: Analise estatisticamente o concurso {ultimo_concurso['concurso']}.
-    Gere EXATAMENTE 100 insights curtos (JSON Puro).
-    """
+        prompt_usuario = f"""
+        DADOS (Últimos 10 resultados): {json.dumps(dados_recentes)}
+        
+        TAREFA: 
+        1. Analise o concurso {ultimo_concurso['concurso']} (Dezenas: {dezenas_ultimo}).
+        2. Gere 100 insights curtos.
+        
+        FORMATO JSON OBRIGATÓRIO (Use a chave 'texto' para o app ler):
+        {{
+            "analise_referencia": "{ultimo_concurso['concurso']}",
+            "insights": [
+                {{ "id": 1, "texto": "Exemplo de insight aqui..." }},
+                ... (até 100 itens) ...
+            ]
+        }}
+        """
 
-    for modelo_atual in modelos_para_tentar:
+        print("Enviando para Llama 3 (70b)...")
+        
+        chat_completion = client.chat.completions.create(
+            messages=[
+                {"role": "system", "content": prompt_sistema},
+                {"role": "user", "content": prompt_usuario}
+            ],
+            model="llama-3.3-70b-versatile",
+            temperature=0.5,
+            response_format={"type": "json_object"}
+        )
+
+        conteudo_json = chat_completion.choices[0].message.content
+        
+        # Validação extra: tenta carregar o JSON para ver se não está quebrado
         try:
-            print(f"Tentando conectar com o modelo: {modelo_atual}...")
+            json.loads(conteudo_json) # Teste de validade
             
-            response = client.models.generate_content(
-                model=modelo_atual,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    response_mime_type='application/json',
-                    temperature=0.7
-                )
-            )
-            
-            # Se chegou aqui, funcionou!
-            if response.text:
-                os.makedirs("api", exist_ok=True)
-                with open("api/insights_ia.json", "w", encoding="utf-8") as f:
-                    f.write(response.text)
-                print(f"SUCESSO! Insights gerados usando o modelo: {modelo_atual}")
-                return # Sai da função, pois já conseguiu
+            os.makedirs("api", exist_ok=True)
+            with open("api/insights_ia.json", "w", encoding="utf-8") as f:
+                f.write(conteudo_json)
+                
+            print("SUCESSO! Arquivo 'api/insights_ia.json' gerado e validado.")
+        except:
+            print("ERRO: A IA gerou um JSON inválido. Tentando salvar mesmo assim para debug.")
+            with open("api/insights_ia.json", "w", encoding="utf-8") as f:
+                f.write(conteudo_json)
 
-        except Exception as e:
-            # Se der erro 404 ou qualquer outro, apenas avisa e deixa o loop continuar
-            print(f"Falha no modelo {modelo_atual}. Tentando o próximo... (Erro: {e})")
-
-    print("ERRO FINAL: Nenhum dos modelos funcionou. Verifique sua API Key.")
+    except Exception as e:
+        print(f"ERRO CRÍTICO NA IA: {e}")
 
 def atualizar_dados():
     print("Iniciando atualização...")
