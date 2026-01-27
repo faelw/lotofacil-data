@@ -6,7 +6,6 @@ from collections import Counter
 
 # --- CONFIGURAÇÕES ---
 API_URL = "https://loteriascaixa-api.herokuapp.com/api/lotofacil"
-# Você pode usar MISTRAL ou GROQ. Aqui configurei para MISTRAL por ser mais analítica.
 API_KEY = os.environ.get("MISTRAL_API_KEY") 
 API_ENDPOINT = "https://api.mistral.ai/v1/chat/completions"
 MODELO_IA = "mistral-small-latest"
@@ -16,7 +15,7 @@ MODELO_IA = "mistral-small-latest"
 # ==============================================================================
 
 def calcular_z_score(todos_jogos):
-    """Detecta anomalias estatísticas graves."""
+    """Detecta anomalias estatísticas graves com base nos últimos 30 concursos."""
     ultimos_30 = todos_jogos[-30:]
     todas_dezenas = [int(d) for j in ultimos_30 for d in j['dezenas']]
     freq = Counter(todas_dezenas)
@@ -33,7 +32,7 @@ def calcular_z_score(todos_jogos):
     return analise
 
 def analisar_ciclo(todos_jogos):
-    """Descobre números que faltam para fechar o ciclo (Gatilho para Rara/Lendária)."""
+    """Descobre números que faltam para fechar o ciclo completo (gatilho para raridade)."""
     acumulado = set()
     for jogo in reversed(todos_jogos):
         dezenas = {int(d) for d in jogo['dezenas']}
@@ -44,23 +43,27 @@ def analisar_ciclo(todos_jogos):
     return faltam
 
 def analisar_atraso(todos_jogos):
+    """Calcula o atraso de cada dezena (quantos concursos sem aparecer)."""
     atrasos = {}
     for n in range(1, 26):
         count = 0
         for jogo in reversed(todos_jogos):
-            if n not in [int(d) for d in jogo['dezenas']]: count += 1
-            else: break
+            if n not in [int(d) for d in jogo['dezenas']]:
+                count += 1
+            else:
+                break
         atrasos[n] = count
     return atrasos
 
 def preparar_dados_ia(todos_jogos):
+    """Prepara os dados matemáticos para alimentar a IA."""
     ultimo = todos_jogos[-1]
     
     z_scores = calcular_z_score(todos_jogos)
     ciclo = analisar_ciclo(todos_jogos)
     atrasos = analisar_atraso(todos_jogos)
     
-    # Filtra Oportunidades de Ouro (Para forçar cartas Lendárias)
+    # Filtra oportunidades de ouro
     ouro = []
     for n, z in z_scores.items():
         if z > 1.8: ouro.append(f"Dezena {n} (Z-Score Explosivo {z})")
@@ -84,29 +87,29 @@ def gerar_insights(dados):
         print("ERRO: API Key não encontrada.")
         return
 
+    # Prompt do sistema refinado
     prompt_sistema = """
-    Você é o 'Oráculo da Loto', um sistema de IA integrado a um App Gamificado.
+    Você é o 'Oráculo da Loto', um matemático analista de loterias integrado a um App Gamificado.
     
-    SUA MISSÃO: Criar "Cartas de Insight" com raridades baseadas na matemática.
+    MISSÃO: Transformar dados estatísticos em "Cartas de Insight" com raridades baseadas em fundamentos matemáticos.
     
-    REGRAS DE RARIDADE (Você DEVE usar as palavras-chave para ativar o App):
+    🔎 Diretrizes:
+    - Use linguagem técnica, mas acessível, como se fosse um relatório consultivo para apostadores.
+    - Cada insight deve conter uma justificativa matemática (frequência, atraso, probabilidade condicional, Z-Score).
+    - Traga comparações históricas (ex: "Esse padrão só ocorreu 2 vezes nos últimos 100 concursos").
+    - Use metáforas e analogias criativas para engajar (ex: "Essa dezena está como um jogador em aquecimento").
+    - Diferencie claramente as raridades:
+      🟡 LENDÁRIA → "Certeza", "Padrão Ouro", "Foco Total"
+      🔵 RARA → "Atenção", "Ciclo", "Importante"
+      ⚪ COMUM → observações gerais, curiosidades
     
-    1. 🟡 LENDÁRIA (Use palavras: "Certeza", "Padrão Ouro", "Foco Total"):
-       - Use APENAS quando o Z-Score for extremo ou para fechar Ciclo.
-       - Título deve ser impactante (Ex: "Oportunidade Única").
-    
-    2. 🔵 RARA (Use palavras: "Atenção", "Ciclo", "Importante"):
-       - Use para dezenas atrasadas ou tendências fortes.
-       - Título deve ser técnico (Ex: "Análise de Ciclo").
-    
-    3. ⚪ COMUM (Texto normal):
-       - Use para observações gerais de soma, pares, etc.
-       - Título simples (Ex: "Curiosidade").
-
-    Gere 30 insights variados (aprox: 3 Lendários, 7 Raros, 20 Comuns).
-    O JSON deve ter 'titulo' e 'texto'.
+    🎯 Estrutura esperada:
+    - Gere exatamente 30 insights (3 Lendários, 7 Raros, 20 Comuns).
+    - Cada insight deve ter 'titulo' e 'texto'.
+    - O texto deve conter explicação matemática + narrativa envolvente.
     """
 
+    # Prompt do usuário refinado
     prompt_usuario = f"""
     DADOS MATEMÁTICOS REAIS (Concurso {dados['concurso']}):
     
@@ -119,7 +122,12 @@ def gerar_insights(dados):
     📉 CANDIDATAS A RARAS (Mais Atrasadas): 
     {dados['top_atrasos']}
     
-    Gere o JSON. Seja criativo nos Títulos.
+    📊 Instruções adicionais:
+    - Para cada insight, explique o raciocínio matemático (ex: cálculo de atraso, relevância do Z-Score).
+    - Inclua comparações históricas e padrões raros.
+    - Use metáforas criativas para engajar apostadores.
+    - Estruture como se fosse um relatório consultivo de um especialista em loterias.
+    
     FORMATO:
     {{
         "analise_referencia": "{dados['concurso']}",
