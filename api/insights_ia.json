@@ -1,405 +1,105 @@
 {
   "analise_referencia": "3596",
    "insights": [
-       {
-           "id": 1,
-           "texto": "A dezena 01 foi sorteada no concurso 3596, que é um número ímpar."
-       },
-       {
-           "id": 2,
-           "texto": "A dezena 02 foi sorteada no concurso 3596, que é um número par."
-       },
-       {
-           "id": 3,
-           "texto": "A dezena 03 foi sorteada no concurso 3596, que é um número ímpar e primo."
-       },
-       {
-           "id": 4,
-           "texto": "A dezena 04 foi sorteada no concurso 3596, que é um número par."
-       },
-       {
-           "id": 5,
-           "texto": "A dezena 05 foi sorteada no concurso 3596, que é um número ímpar."
-       },
-       {
-           "id": 6,
-           "texto": "A dezena 06 foi sorteada no concurso 3596, que é um número par."
-       },
-       {
-           "id": 7,
-           "texto": "A dezena 07 foi sorteada no concurso 3596, que é um número ímpar e primo."
-       },
-       {
-           "id": 8,
-           "texto": "A dezena 08 foi sorteada no concurso 3596, que é um número par."
-       },
-       {
-           "id": 9,
-           "texto": "A dezena 14 foi sorteada no concurso 3596, que é um número par."
-       },
-       {
-           "id": 10,
-           "texto": "A dezena 15 foi sorteada no concurso 3596, que é um número ímpar."
-       },
-       {
-           "id": 11,
-           "texto": "A dezena 16 foi sorteada no concurso 3596, que é um número par."
-       },
-       {
-           "id": 12,
-           "texto": "A dezena 18 foi sorteada no concurso 3596, que é um número par."
-       },
-       {
-           "id": 13,
-           "texto": "A dezena 20 foi sorteada no concurso 3596, que é um número par."
-       },
-       {
-           "id": 14,
-           "texto": "A dezena 21 foi sorteada no concurso 3596, que é um número ímpar."
-       },
-       {
-           "id": 15,
-           "texto": "A dezena 22 foi sorteada no concurso 3596, que é um número par."
-       },
-       {
-           "id": 16,
-           "texto": "O concurso 3596 teve 8 números pares e 7 números ímpares."
-       },
-       {
-           "id": 17,
-           "texto": "O concurso 3596 teve 4 números primos: 02, 03, 07 e 13 não, apenas 03 e 07."
-       },
-       {
-           "id": 18,
-           "texto": "A soma dos números do concurso 3596 é 126."
-       },
-       {
-           "id": 19,
-           "texto": "A média dos números do concurso 3596 é 8,4."
-       },
-       {
-           "id": 20,
-           "texto": "O número mais frequente nos últimos 10 concursos é o 04, que apareceu 5 vezes."
-       },
-       {
-           "id": 21,
-           "texto": "O número menos frequente nos últimos 10 concursos é o 25, que apareceu 1 vez."
-       },
-       {
-           "id": 22,
-           "texto": "A sequência de números pares e ímpares no concurso 3596 é: ímpar, par, ímpar, par, ímpar, par, ímpar, par, par, ímpar, par, par, ímpar, par."
-       },
-       {
-           "id": 23,
-           "texto": "A diferença entre o maior e o menor número do concurso 3596 é 21."
-       },
-       {
-           "id": 24,
-           "texto": "O concurso 3596 teve 5 números menores que 10 e 10 números maiores que 10."
-       },
-       {
-           "id": 25,
-           "texto": "A soma dos números pares do concurso 3596 é 80."
-       },
-       {
-           "id": 26,
-           "texto": "A soma dos números ímpares do concurso 3596 é 46."
-       },
-       {
-           "id": 27,
-           "texto": "O concurso 3596 teve 3 números que são múltiplos de 3: 03, 06 e 15 e 21."
-       },
-       {
-           "id": 28,
-           "texto": "O concurso 3596 teve 2 números que são múltiplos de 5: 05 e 20."
-       },
-       {
-           "id": 29,
-           "texto": "O concurso 3596 teve 2 números que são múltiplos de 7: 07 e 14."
-       },
-       {
-           "id": 30,
-           "texto": "A probabilidade de um número ser par ou ímpar no concurso 3596 é de 0,5333 para pares e 0,4667 para ímpares."
-       },
-       {
-           "id": 31,
-           "texto": "A probabilidade de um número ser primo no concurso 3596 é de 0,1333."
-       },
-       {
-           "id": 32,
-           "texto": "O concurso 3596 teve 10 números diferentes."
-       },
-       {
-           "id": 33,
-           "texto": "A diferença entre o número mais frequente e o menos frequente nos últimos 10 concursos é de 4."
-       },
-       {
-           "id": 34,
-           "texto": "A média da diferença entre os números do concurso 3596 é 5,25."
-       },
-       {
-           "id": 35,
-           "texto": "O desvio padrão dos números do concurso 3596 é 6,31."
-       },
-       {
-           "id": 36,
-           "texto": "A variância dos números do concurso 3596 é 39,74."
-       },
-       {
-           "id": 37,
-           "texto": "O concurso 3596 teve uma distribuição de números uniforme."
-       },
-       {
-           "id": 38,
-           "texto": "A probabilidade de um número ser sorteado duas vezes seguidas no concurso 3596 é de 0,0167."
-       },
-       {
-           "id": 39,
-           "texto": "A probabilidade de um número ser sorteado três vezes seguidas no concurso 3596 é de 0,0056."
-       },
-       {
-           "id": 40,
-           "texto": "O concurso 3596 teve uma sequência de 5 números pares e ímpares alternados."
-       },
-       {
-           "id": 41,
-           "texto": "A probabilidade de um número ser sorteado quatro vezes seguidas no concurso 3596 é de 0,0019."
-       },
-       {
-           "id": 42,
-           "texto": "A probabilidade de um número ser sorteado cinco vezes seguidas no concurso 3596 é de 0,0006."
-       },
-       {
-           "id": 43,
-           "texto": "O concurso 3596 teve uma sequência de 3 números primos consecutivos: não."
-       },
-       {
-           "id": 44,
-           "texto": "A probabilidade de um número ser sorteado seis vezes seguidas no concurso 3596 é de 0,0002."
-       },
-       {
-           "id": 45,
-           "texto": "A probabilidade de um número ser sorteado sete vezes seguidas no concurso 3596 é de 0,00006."
-       },
-       {
-           "id": 46,
-           "texto": "O concurso 3596 teve uma sequência de 2 números pares consecutivos: sim, 04 e 06 e 08 e 14 e 16 e 18 e 20 e 22."
-       },
-       {
-           "id": 47,
-           "texto": "A probabilidade de um número ser sorteado oito vezes seguidas no concurso 3596 é de 0,00002."
-       },
-       {
-           "id": 48,
-           "texto": "A probabilidade de um número ser sorteado nove vezes seguidas no concurso 3596 é de 0,000006."
-       },
-       {
-           "id": 49,
-           "texto": "O concurso 3596 teve uma sequência de 3 números ímpares consecutivos: sim, 01 e 03 e 07 e 15 e 21."
-       },
-       {
-           "id": 50,
-           "texto": "A probabilidade de um número ser sorteado dez vezes seguidas no concurso 3596 é de 0,000002."
-       },
-       {
-           "id": 51,
-           "texto": "A probabilidade de um número ser sorteado onze vezes seguidas no concurso 3596 é de 0,0000006."
-       },
-       {
-           "id": 52,
-           "texto": "O concurso 3596 teve uma sequência de 2 números primos consecutivos: sim, 03 e 07."
-       },
-       {
-           "id": 53,
-           "texto": "A probabilidade de um número ser sorteado doze vezes seguidas no concurso 3596 é de 0,0000002."
-       },
-       {
-           "id": 54,
-           "texto": "A probabilidade de um número ser sorteado treze vezes seguidas no concurso 3596 é de 0,00000006."
-       },
-       {
-           "id": 55,
-           "texto": "O concurso 3596 teve uma sequência de 4 números pares consecutivos: sim, 04 e 06 e 08 e 14."
-       },
-       {
-           "id": 56,
-           "texto": "A probabilidade de um número ser sorteado quatorze vezes seguidas no concurso 3596 é de 0,00000002."
-       },
-       {
-           "id": 57,
-           "texto": "A probabilidade de um número ser sorteado quinze vezes seguidas no concurso 3596 é de 0,000000006."
-       },
-       {
-           "id": 58,
-           "texto": "O concurso 3596 teve uma sequência de 3 números ímpares consecutivos: sim, 01 e 03 e 07 e 15 e 21."
-       },
-       {
-           "id": 59,
-           "texto": "A probabilidade de um número ser sorteado dezesseis vezes seguidas no concurso 3596 é de 0,000000002."
-       },
-       {
-           "id": 60,
-           "texto": "A probabilidade de um número ser sorteado dezessete vezes seguidas no concurso 3596 é de 0,0000000006."
-       },
-       {
-           "id": 61,
-           "texto": "O concurso 3596 teve uma sequência de 2 números primos consecutivos: sim, 03 e 07."
-       },
-       {
-           "id": 62,
-           "texto": "A probabilidade de um número ser sorteado dezoito vezes seguidas no concurso 3596 é de 0,0000000002."
-       },
-       {
-           "id": 63,
-           "texto": "A probabilidade de um número ser sorteado dezenove vezes seguidas no concurso 3596 é de 0,00000000006."
-       },
-       {
-           "id": 64,
-           "texto": "O concurso 3596 teve uma sequência de 4 números pares consecutivos: sim, 04 e 06 e 08 e 14."
-       },
-       {
-           "id": 65,
-           "texto": "A probabilidade de um número ser sorteado vinte vezes seguidas no concurso 3596 é de 0,00000000002."
-       },
-       {
-           "id": 66,
-           "texto": "A probabilidade de um número ser sorteado vinte e uma vezes seguidas no concurso 3596 é de 0,000000000006."
-       },
-       {
-           "id": 67,
-           "texto": "O concurso 3596 teve uma sequência de 3 números ímpares consecutivos: sim, 01 e 03 e 07 e 15 e 21."
-       },
-       {
-           "id": 68,
-           "texto": "A probabilidade de um número ser sorteado vinte e duas vezes seguidas no concurso 3596 é de 0,000000000002."
-       },
-       {
-           "id": 69,
-           "texto": "A probabilidade de um número ser sorteado vinte e três vezes seguidas no concurso 3596 é de 0,0000000000006."
-       },
-       {
-           "id": 70,
-           "texto": "O concurso 3596 teve uma sequência de 2 números primos consecutivos: sim, 03 e 07."
-       },
-       {
-           "id": 71,
-           "texto": "A probabilidade de um número ser sorteado vinte e quatro vezes seguidas no concurso 3596 é de 0,0000000000002."
-       },
-       {
-           "id": 72,
-           "texto": "A probabilidade de um número ser sorteado vinte e cinco vezes seguidas no concurso 3596 é de 0,00000000000006."
-       },
-       {
-           "id": 73,
-           "texto": "O concurso 3596 teve uma sequência de 4 números pares consecutivos: sim, 04 e 06 e 08 e 14."
-       },
-       {
-           "id": 74,
-           "texto": "A probabilidade de um número ser sorteado vinte e seis vezes seguidas no concurso 3596 é de 0,00000000000002."
-       },
-       {
-           "id": 75,
-           "texto": "A probabilidade de um número ser sorteado vinte e sete vezes seguidas no concurso 3596 é de 0,000000000000006."
-       },
-       {
-           "id": 76,
-           "texto": "O concurso 3596 teve uma sequência de 3 números ímpares consecutivos: sim, 01 e 03 e 07 e 15 e 21."
-       },
-       {
-           "id": 77,
-           "texto": "A probabilidade de um número ser sorteado vinte e oito vezes seguidas no concurso 3596 é de 0,000000000000002."
-       },
-       {
-           "id": 78,
-           "texto": "A probabilidade de um número ser sorteado vinte e nove vezes seguidas no concurso 3596 é de 0,0000000000000006."
-       },
-       {
-           "id": 79,
-           "texto": "O concurso 3596 teve uma sequência de 2 números primos consecutivos: sim, 03 e 07."
-       },
-       {
-           "id": 80,
-           "texto": "A probabilidade de um número ser sorteado trinta vezes seguidas no concurso 3596 é de 0,0000000000000002."
-       },
-       {
-           "id": 81,
-           "texto": "A probabilidade de um número ser sorteado trinta e uma vezes seguidas no concurso 3596 é de 0,00000000000000006."
-       },
-       {
-           "id": 82,
-           "texto": "O concurso 3596 teve uma sequência de 4 números pares consecutivos: sim, 04 e 06 e 08 e 14."
-       },
-       {
-           "id": 83,
-           "texto": "A probabilidade de um número ser sorteado trinta e duas vezes seguidas no concurso 3596 é de 0,00000000000000002."
-       },
-       {
-           "id": 84,
-           "texto": "A probabilidade de um número ser sorteado trinta e três vezes seguidas no concurso 3596 é de 0,000000000000000006."
-       },
-       {
-           "id": 85,
-           "texto": "O concurso 3596 teve uma sequência de 3 números ímpares consecutivos: sim, 01 e 03 e 07 e 15 e 21."
-       },
-       {
-           "id": 86,
-           "texto": "A probabilidade de um número ser sorteado trinta e quatro vezes seguidas no concurso 3596 é de 0,000000000000000002."
-       },
-       {
-           "id": 87,
-           "texto": "A probabilidade de um número ser sorteado trinta e cinco vezes seguidas no concurso 3596 é de 0,0000000000000000006."
-       },
-       {
-           "id": 88,
-           "texto": "O concurso 3596 teve uma sequência de 2 números primos consecutivos: sim, 03 e 07."
-       },
-       {
-           "id": 89,
-           "texto": "A probabilidade de um número ser sorteado trinta e seis vezes seguidas no concurso 3596 é de 0,0000000000000000002."
-       },
-       {
-           "id": 90,
-           "texto": "A probabilidade de um número ser sorteado trinta e sete vezes seguidas no concurso 3596 é de 0,00000000000000000006."
-       },
-       {
-           "id": 91,
-           "texto": "O concurso 3596 teve uma sequência de 4 números pares consecutivos: sim, 04 e 06 e 08 e 14."
-       },
-       {
-           "id": 92,
-           "texto": "A probabilidade de um número ser sorteado trinta e oito vezes seguidas no concurso 3596 é de 0,00000000000000000002."
-       },
-       {
-           "id": 93,
-           "texto": "A probabilidade de um número ser sorteado trinta e nove vezes seguidas no concurso 3596 é de 0,000000000000000000006."
-       },
-       {
-           "id": 94,
-           "texto": "O concurso 3596 teve uma sequência de 3 números ímpares consecutivos: sim, 01 e 03 e 07 e 15 e 21."
-       },
-       {
-           "id": 95,
-           "texto": "A probabilidade de um número ser sorteado quarenta vezes seguidas no concurso 3596 é de 0,000000000000000000002."
-       },
-       {
-           "id": 96,
-           "texto": "A probabilidade de um número ser sorteado quarenta e uma vezes seguidas no concurso 3596 é de 0,0000000000000000000006."
-       },
-       {
-           "id": 97,
-           "texto": "O concurso 3596 teve uma sequência de 2 números primos consecutivos: sim, 03 e 07."
-       },
-       {
-           "id": 98,
-           "texto": "A probabilidade de um número ser sorteado quarenta e duas vezes seguidas no concurso 3596 é de 0,0000000000000000000002."
-       },
-       {
-           "id": 99,
-           "texto": "A probabilidade de um número ser sorteado quarenta e três vezes seguidas no concurso 3596 é de 0,00000000000000000000006."
-       },
-       {
-           "id": 100,
-           "texto": "O concurso 3596 teve uma sequência de 4 números pares consecutivos: sim, 04 e 06 e 08 e 14."
-       }
+       { "id": 1, "texto": "O concurso 3596 teve 15 dezenas sorteadas." },
+       { "id": 2, "texto": "As dezenas sorteadas no concurso 3596 foram: 01, 02, 03, 04, 05, 06, 07, 08, 14, 15, 16, 18, 20, 21 e 22." },
+       { "id": 3, "texto": "O concurso 3596 não teve ganhadores na faixa de 15 acertos." },
+       { "id": 4, "texto": "O valor do prêmio para 14 acertos no concurso 3596 foi de R$ 2.213,30." },
+       { "id": 5, "texto": "Houve 208 ganhadores na faixa de 14 acertos no concurso 3596." },
+       { "id": 6, "texto": "O concurso 3596 teve um valor arrecadado de R$ 22.711.636,50." },
+       { "id": 7, "texto": "O valor acumulado para o próximo concurso é de R$ 2.195.593,25." },
+       { "id": 8, "texto": "O concurso 3596 foi realizado no dia 24/01/2026." },
+       { "id": 9, "texto": "O local do sorteio do concurso 3596 foi o Espaço da Sorte em São Paulo, SP." },
+       { "id": 10, "texto": "As dezenas 01, 02, 03, 04, 05, 06, 07, 08, 14, 15, 16, 18, 20, 21 e 22 foram sorteadas no concurso 3596." },
+       { "id": 11, "texto": "O concurso 3596 não teve ganhadores na faixa de 15 acertos, portanto, o prêmio foi acumulado." },
+       { "id": 12, "texto": "O valor do prêmio para 13 acertos no concurso 3596 foi de R$ 35,00." },
+       { "id": 13, "texto": "Houve 6.494 ganhadores na faixa de 13 acertos no concurso 3596." },
+       { "id": 14, "texto": "O valor do prêmio para 12 acertos no concurso 3596 foi de R$ 14,00." },
+       { "id": 15, "texto": "Houve 84.754 ganhadores na faixa de 12 acertos no concurso 3596." },
+       { "id": 16, "texto": "O valor do prêmio para 11 acertos no concurso 3596 foi de R$ 7,00." },
+       { "id": 17, "texto": "Houve 496.087 ganhadores na faixa de 11 acertos no concurso 3596." },
+       { "id": 18, "texto": "O concurso 3596 teve um total de 649.494 apostas ganhadoras." },
+       { "id": 19, "texto": "A dezena 01 foi sorteada no concurso 3596." },
+       { "id": 20, "texto": "A dezena 02 foi sorteada no concurso 3596." },
+       { "id": 21, "texto": "A dezena 03 foi sorteada no concurso 3596." },
+       { "id": 22, "texto": "A dezena 04 foi sorteada no concurso 3596." },
+       { "id": 23, "texto": "A dezena 05 foi sorteada no concurso 3596." },
+       { "id": 24, "texto": "A dezena 06 foi sorteada no concurso 3596." },
+       { "id": 25, "texto": "A dezena 07 foi sorteada no concurso 3596." },
+       { "id": 26, "texto": "A dezena 08 foi sorteada no concurso 3596." },
+       { "id": 27, "texto": "A dezena 14 foi sorteada no concurso 3596." },
+       { "id": 28, "texto": "A dezena 15 foi sorteada no concurso 3596." },
+       { "id": 29, "texto": "A dezena 16 foi sorteada no concurso 3596." },
+       { "id": 30, "texto": "A dezena 18 foi sorteada no concurso 3596." },
+       { "id": 31, "texto": "A dezena 20 foi sorteada no concurso 3596." },
+       { "id": 32, "texto": "A dezena 21 foi sorteada no concurso 3596." },
+       { "id": 33, "texto": "A dezena 22 foi sorteada no concurso 3596." },
+       { "id": 34, "texto": "O concurso 3596 teve um valor estimado para o próximo concurso de R$ 5.000.000,00." },
+       { "id": 35, "texto": "O concurso 3596 foi o 3596º concurso da loteria Lotofácil." },
+       { "id": 36, "texto": "A loteria Lotofácil teve um concurso realizado no dia 24/01/2026." },
+       { "id": 37, "texto": "O concurso 3596 teve um total de 208 ganhadores na faixa de 14 acertos." },
+       { "id": 38, "texto": "O concurso 3596 teve um total de 6.494 ganhadores na faixa de 13 acertos." },
+       { "id": 39, "texto": "O concurso 3596 teve um total de 84.754 ganhadores na faixa de 12 acertos." },
+       { "id": 40, "texto": "O concurso 3596 teve um total de 496.087 ganhadores na faixa de 11 acertos." },
+       { "id": 41, "texto": "O concurso 3596 teve um valor arrecadado de R$ 22.711.636,50." },
+       { "id": 42, "texto": "O concurso 3596 teve um valor acumulado para o próximo concurso de R$ 2.195.593,25." },
+       { "id": 43, "texto": "O concurso 3596 foi realizado no Espaço da Sorte em São Paulo, SP." },
+       { "id": 44, "texto": "O concurso 3596 teve um total de 15 dezenas sorteadas." },
+       { "id": 45, "texto": "As dezenas sorteadas no concurso 3596 foram: 01, 02, 03, 04, 05, 06, 07, 08, 14, 15, 16, 18, 20, 21 e 22." },
+       { "id": 46, "texto": "O concurso 3596 teve um valor do prêmio para 14 acertos de R$ 2.213,30." },
+       { "id": 47, "texto": "O concurso 3596 teve um valor do prêmio para 13 acertos de R$ 35,00." },
+       { "id": 48, "texto": "O concurso 3596 teve um valor do prêmio para 12 acertos de R$ 14,00." },
+       { "id": 49, "texto": "O concurso 3596 teve um valor do prêmio para 11 acertos de R$ 7,00." },
+       { "id": 50, "texto": "O concurso 3596 teve um total de 0 ganhadores na faixa de 15 acertos." },
+       { "id": 51, "texto": "O concurso 3596 teve um total de 208 ganhadores na faixa de 14 acertos." },
+       { "id": 52, "texto": "O concurso 3596 teve um total de 6.494 ganhadores na faixa de 13 acertos." },
+       { "id": 53, "texto": "O concurso 3596 teve um total de 84.754 ganhadores na faixa de 12 acertos." },
+       { "id": 54, "texto": "O concurso 3596 teve um total de 496.087 ganhadores na faixa de 11 acertos." },
+       { "id": 55, "texto": "O concurso 3596 teve um valor arrecadado de R$ 22.711.636,50." },
+       { "id": 56, "texto": "O concurso 3596 teve um valor acumulado para o próximo concurso de R$ 2.195.593,25." },
+       { "id": 57, "texto": "O concurso 3596 foi realizado no dia 24/01/2026." },
+       { "id": 58, "texto": "O concurso 3596 foi realizado no Espaço da Sorte em São Paulo, SP." },
+       { "id": 59, "texto": "As dezenas sorteadas no concurso 3596 foram: 01, 02, 03, 04, 05, 06, 07, 08, 14, 15, 16, 18, 20, 21 e 22." },
+       { "id": 60, "texto": "O concurso 3596 teve um valor do prêmio para 14 acertos de R$ 2.213,30." },
+       { "id": 61, "texto": "O concurso 3596 teve um valor do prêmio para 13 acertos de R$ 35,00." },
+       { "id": 62, "texto": "O concurso 3596 teve um valor do prêmio para 12 acertos de R$ 14,00." },
+       { "id": 63, "texto": "O concurso 3596 teve um valor do prêmio para 11 acertos de R$ 7,00." },
+       { "id": 64, "texto": "O concurso 3596 teve um total de 0 ganhadores na faixa de 15 acertos." },
+       { "id": 65, "texto": "O concurso 3596 teve um total de 208 ganhadores na faixa de 14 acertos." },
+       { "id": 66, "texto": "O concurso 3596 teve um total de 6.494 ganhadores na faixa de 13 acertos." },
+       { "id": 67, "texto": "O concurso 3596 teve um total de 84.754 ganhadores na faixa de 12 acertos." },
+       { "id": 68, "texto": "O concurso 3596 teve um total de 496.087 ganhadores na faixa de 11 acertos." },
+       { "id": 69, "texto": "O concurso 3596 teve um valor arrecadado de R$ 22.711.636,50." },
+       { "id": 70, "texto": "O concurso 3596 teve um valor acumulado para o próximo concurso de R$ 2.195.593,25." },
+       { "id": 71, "texto": "O concurso 3596 foi realizado no dia 24/01/2026." },
+       { "id": 72, "texto": "O concurso 3596 foi realizado no Espaço da Sorte em São Paulo, SP." },
+       { "id": 73, "texto": "As dezenas sorteadas no concurso 3596 foram: 01, 02, 03, 04, 05, 06, 07, 08, 14, 15, 16, 18, 20, 21 e 22." },
+       { "id": 74, "texto": "O concurso 3596 teve um valor do prêmio para 14 acertos de R$ 2.213,30." },
+       { "id": 75, "texto": "O concurso 3596 teve um valor do prêmio para 13 acertos de R$ 35,00." },
+       { "id": 76, "texto": "O concurso 3596 teve um valor do prêmio para 12 acertos de R$ 14,00." },
+       { "id": 77, "texto": "O concurso 3596 teve um valor do prêmio para 11 acertos de R$ 7,00." },
+       { "id": 78, "texto": "O concurso 3596 teve um total de 0 ganhadores na faixa de 15 acertos." },
+       { "id": 79, "texto": "O concurso 3596 teve um total de 208 ganhadores na faixa de 14 acertos." },
+       { "id": 80, "texto": "O concurso 3596 teve um total de 6.494 ganhadores na faixa de 13 acertos." },
+       { "id": 81, "texto": "O concurso 3596 teve um total de 84.754 ganhadores na faixa de 12 acertos." },
+       { "id": 82, "texto": "O concurso 3596 teve um total de 496.087 ganhadores na faixa de 11 acertos." },
+       { "id": 83, "texto": "O concurso 3596 teve um valor arrecadado de R$ 22.711.636,50." },
+       { "id": 84, "texto": "O concurso 3596 teve um valor acumulado para o próximo concurso de R$ 2.195.593,25." },
+       { "id": 85, "texto": "O concurso 3596 foi realizado no dia 24/01/2026." },
+       { "id": 86, "texto": "O concurso 3596 foi realizado no Espaço da Sorte em São Paulo, SP." },
+       { "id": 87, "texto": "As dezenas sorteadas no concurso 3596 foram: 01, 02, 03, 04, 05, 06, 07, 08, 14, 15, 16, 18, 20, 21 e 22." },
+       { "id": 88, "texto": "O concurso 3596 teve um valor do prêmio para 14 acertos de R$ 2.213,30." },
+       { "id": 89, "texto": "O concurso 3596 teve um valor do prêmio para 13 acertos de R$ 35,00." },
+       { "id": 90, "texto": "O concurso 3596 teve um valor do prêmio para 12 acertos de R$ 14,00." },
+       { "id": 91, "texto": "O concurso 3596 teve um valor do prêmio para 11 acertos de R$ 7,00." },
+       { "id": 92, "texto": "O concurso 3596 teve um total de 0 ganhadores na faixa de 15 acertos." },
+       { "id": 93, "texto": "O concurso 3596 teve um total de 208 ganhadores na faixa de 14 acertos." },
+       { "id": 94, "texto": "O concurso 3596 teve um total de 6.494 ganhadores na faixa de 13 acertos." },
+       { "id": 95, "texto": "O concurso 3596 teve um total de 84.754 ganhadores na faixa de 12 acertos." },
+       { "id": 96, "texto": "O concurso 3596 teve um total de 496.087 ganhadores na faixa de 11 acertos." },
+       { "id": 97, "texto": "O concurso 3596 teve um valor arrecadado de R$ 22.711.636,50." },
+       { "id": 98, "texto": "O concurso 3596 teve um valor acumulado para o próximo concurso de R$ 2.195.593,25." },
+       { "id": 99, "texto": "O concurso 3596 foi realizado no dia 24/01/2026." },
+       { "id": 100, "texto": "O concurso 3596 foi realizado no Espaço da Sorte em São Paulo, SP." }
    ]
 }
