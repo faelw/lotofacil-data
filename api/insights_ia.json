@@ -1,38 +1,30 @@
 {
-    "analise_referencia": "3602",
-    "insights": [
-        { "titulo": "Padrão Ouro Detectado", "texto": "Certeza: A dezena 4 atingiu o limite estatístico com Z-Score de 2.15." },
-        { "titulo": "Atraso Crítico", "texto": "Certeza: A dezena 14 está em atraso crítico com Z-Score de -2.46." },
-        { "titulo": "Equilíbrio de Pares/Ímpares", "texto": "Foco Total: O jogo está equilibrado com 8 pares e 7 ímpares." },
-        { "titulo": "Número de Primos", "texto": "Foco Total: O número de primos está dentro do ideal com 5 primos." },
-        { "titulo": "Soma das Dezenas", "texto": "Atenção: A soma das dezenas está ligeiramente abaixo do ideal com 179." },
-        { "titulo": "Repetidas do Anterior", "texto": "Atenção: 9 dezenas se repetiram do concurso anterior." },
-        { "titulo": "Atraso Top 5", "texto": "Atenção: A dezena 10 está entre as 5 mais atrasadas." },
-        { "titulo": "Atraso Top 5", "texto": "Atenção: A dezena 14 está entre as 5 mais atrasadas." },
-        { "titulo": "Atraso Top 5", "texto": "Atenção: A dezena 13 está entre as 5 mais atrasadas." },
-        { "titulo": "Atraso Top 5", "texto": "Atenção: A dezena 12 está entre as 5 mais atrasadas." },
-        { "titulo": "Atraso Top 5", "texto": "Atenção: A dezena 7 está entre as 5 mais atrasadas." },
-        { "titulo": "Dezena 4", "texto": "Foco Total: A dezena 4 está saturada e deve ser monitorada." },
-        { "titulo": "Dezena 14", "texto": "Foco Total: A dezena 14 está em atraso crítico e deve ser monitorada." },
-        { "titulo": "Dezena 10", "texto": "Importante: A dezena 10 está entre as 5 mais atrasadas." },
-        { "titulo": "Dezena 13", "texto": "Importante: A dezena 13 está entre as 5 mais atrasadas." },
-        { "titulo": "Dezena 12", "texto": "Importante: A dezena 12 está entre as 5 mais atrasadas." },
-        { "titulo": "Dezena 7", "texto": "Importante: A dezena 7 está entre as 5 mais atrasadas." },
-        { "titulo": "Dezena 5", "texto": "Foco Total: A dezena 5 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 6", "texto": "Foco Total: A dezena 6 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 8", "texto": "Foco Total: A dezena 8 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 9", "texto": "Foco Total: A dezena 9 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 11", "texto": "Foco Total: A dezena 11 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 15", "texto": "Foco Total: A dezena 15 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 16", "texto": "Foco Total: A dezena 16 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 17", "texto": "Foco Total: A dezena 17 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 18", "texto": "Foco Total: A dezena 18 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 19", "texto": "Foco Total: A dezena 19 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 20", "texto": "Foco Total: A dezena 20 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 21", "texto": "Foco Total: A dezena 21 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 22", "texto": "Foco Total: A dezena 22 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 23", "texto": "Foco Total: A dezena 23 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 24", "texto": "Foco Total: A dezena 24 está dentro do padrão estatístico." },
-        { "titulo": "Dezena 25", "texto": "Foco Total: A dezena 25 está dentro do padrão estatístico." }
-    ]
+  "analise_referencia": 1,
+  "data_analise": "2026-02-01T19:18:05.930652",
+  "metricas_globais": {
+    "soma": 199,
+    "cluster_factor": 0.72
+  },
+  "insights": [
+    {
+      "id": "z_08_245b",
+      "message": "A dezena 08 apresenta um z-score de -1.54, indicando uma anomalia rara. Isso sugere que a dezena 08 tem sido sub-representada nos sorteios recentes."
+    },
+    {
+      "id": "z_20_37d4",
+      "message": "A dezena 20 apresenta um z-score de 2.04, indicando uma anomalia lendária. Isso sugere que a dezena 20 tem sido sobre-representada nos sorteios recentes."
+    },
+    {
+      "id": "z_16_b31f",
+      "message": "A dezena 16 apresenta um z-score de -2.25, indicando uma anomalia lendária. Isso sugere que a dezena 16 tem sido sub-representada nos sorteios recentes."
+    },
+    {
+      "id": "z_25_a94e",
+      "message": "A dezena 25 apresenta um z-score de 1.67, indicando uma anomalia rara. Isso sugere que a dezena 25 tem sido sobre-representada nos sorteios recentes."
+    },
+    {
+      "id": "z_10_dda4",
+      "message": "A dezena 10 apresenta um z-score de 1.67, indicando uma anomalia rara. Isso sugere que a dezena 10 tem sido sobre-representada nos sorteios recentes."
+    }
+  ]
 }
