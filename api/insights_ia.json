@@ -1,1 +1,51 @@
-
+{
+  "concurso": 1,
+  "gerado_em": "2026-02-01 19:23:29",
+  "insights": [
+    {
+      "id": "z_08",
+      "tipo": "estatistica_z",
+      "titulo": "Volatilidade na Dezena 08",
+      "base": {
+        "dezena": "08",
+        "z_score": -1.54
+      }
+    },
+    {
+      "id": "z_20",
+      "tipo": "estatistica_z",
+      "titulo": "Volatilidade na Dezena 20",
+      "base": {
+        "dezena": "20",
+        "z_score": 2.04
+      }
+    },
+    {
+      "id": "z_16",
+      "tipo": "estatistica_z",
+      "titulo": "Volatilidade na Dezena 16",
+      "base": {
+        "dezena": "16",
+        "z_score": -2.25
+      }
+    },
+    {
+      "id": "z_25",
+      "tipo": "estatistica_z",
+      "titulo": "Volatilidade na Dezena 25",
+      "base": {
+        "dezena": "25",
+        "z_score": 1.67
+      }
+    },
+    {
+      "id": "z_10",
+      "tipo": "estatistica_z",
+      "titulo": "Volatilidade na Dezena 10",
+      "base": {
+        "dezena": "10",
+        "z_score": 1.67
+      }
+    }
+  ]
+}
