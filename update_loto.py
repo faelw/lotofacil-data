@@ -4,197 +4,217 @@ import os
 import time
 import urllib3
 
-# Ignora erros de SSL da Caixa
+# Ignora avisos de SSL da Caixa
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# --- CONFIGURAÇÕES ---
+# --- ARQUIVOS ---
 FILE_DB = "api/lotofacil.json"
 FILE_COMPACT = "api/lotofacil_compacto.json"
 FILE_LATEST = "api/lotofacil_detalhada.json"
 
-URL_API_COMUNITARIA = "https://loteriascaixa-api.herokuapp.com/api/lotofacil"
-URL_CAIXA_OFICIAL = "https://servicebus2.caixa.gov.br/portaldeloterias/api/lotofacil"
+URL_CAIXA = "https://servicebus2.caixa.gov.br/portaldeloterias/api/lotofacil"
 
-HEADERS_CAIXA = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Accept': 'application/json, text/plain, */*',
-    'Referer': 'https://loterias.caixa.gov.br/',
-    'Origin': 'https://loterias.caixa.gov.br'
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'application/json',
+    'Origin': 'https://loterias.caixa.gov.br',
+    'Referer': 'https://loterias.caixa.gov.br/'
 }
 
-# --- PROCESSADOR DE DADOS ---
-def padronizar_jogo(dados_brutos):
-    """Extrai dados com segurança, focando no RATEIO."""
-    try:
-        # Identificação
-        concurso = int(dados_brutos.get('concurso', dados_brutos.get('numero')))
-        data = dados_brutos.get('data', dados_brutos.get('dataApuracao'))
-        
-        # Dezenas
-        raw_dezenas = dados_brutos.get('dezenas', dados_brutos.get('listaDezenas', []))
-        if not raw_dezenas: return None
-        dezenas = sorted([int(d) for d in raw_dezenas])
-
-        # --- RATEIO E PREMIAÇÃO (A MÁGICA ACONTECE AQUI) ---
-        rateio_final = []
-        lista_rateio = dados_brutos.get('listaRateioPremio', dados_brutos.get('premiacoes', []))
-        
-        if lista_rateio:
-            for item in lista_rateio:
-                # Tenta pegar a faixa de acertos (ex: "15 acertos")
-                descricao = item.get('descricaoFaixa', str(item.get('faixa', '')))
-                acertos = 0
-                
-                if '15' in descricao: acertos = 15
-                elif '14' in descricao: acertos = 14
-                elif '13' in descricao: acertos = 13
-                elif '12' in descricao: acertos = 12
-                elif '11' in descricao: acertos = 11
-                
-                if acertos > 0:
-                    rateio_final.append({
-                        "acertos": acertos,
-                        "ganhadores": item.get('numeroDeGanhadores', 0),
-                        "premio": item.get('valorPremio', 0.0)
-                    })
-        
-        # Garante ordem decrescente de prêmio (15 -> 11)
-        rateio_final.sort(key=lambda x: x['acertos'], reverse=True)
-
-        return {
-            "concurso": concurso,
-            "data": data,
-            "dezenas": dezenas,
-            "acumulou": dados_brutos.get('acumulado', False),
-            "valor_acumulado": dados_brutos.get('valorAcumuladoProximoConcurso', 0.0),
-            "rateio": rateio_final
-        }
-    except Exception as e:
-        # print(f"Erro parse concurso {dados_brutos.get('numero')}: {e}")
-        return None
-
-# --- GERENCIAMENTO ---
 def carregar_banco():
     if os.path.exists(FILE_DB):
-        with open(FILE_DB, "r", encoding="utf-8") as f:
-            return json.load(f)
+        try:
+            with open(FILE_DB, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except: return []
     return []
 
-def salvar(todos):
-    todos.sort(key=lambda x: x['concurso'])
+def salvar_arquivos(jogos):
+    # Ordena por concurso
+    jogos.sort(key=lambda x: x['concurso'])
     
     os.makedirs("api", exist_ok=True)
     
-    # 1. Banco Completo
+    # 1. Banco Completo (Backup interno)
     with open(FILE_DB, "w", encoding="utf-8") as f:
-        json.dump(todos, f, separators=(',', ':'))
-        
-    # 2. Compacto
-    compacto = [{"c": j['concurso'], "d": j['dezenas']} for j in todos]
+        json.dump(jogos, f, separators=(',', ':'))
+
+    # 2. Compacto (Apenas números para matemática leve)
+    compacto = [{"c": j['concurso'], "d": [int(d) for d in j['dezenas']]} for j in jogos]
     with open(FILE_COMPACT, "w", encoding="utf-8") as f:
         json.dump(compacto, f, separators=(',', ':'))
-        
-    # 3. Detalhada (Invertida para App)
-    detalhada = todos[-15:][::-1] # Pega os 15 últimos
+
+    # 3. Detalhada (NO FORMATO EXATO DOS PRINTS)
+    # Invertemos para o mais recente ficar no topo
+    detalhada = jogos[-15:][::-1]
+    
     with open(FILE_LATEST, "w", encoding="utf-8") as f:
+        # indent=4 ou 2 deixa igual ao seu print
         json.dump(detalhada, f, indent=2, ensure_ascii=False)
         
-    print(f"💾 Arquivos salvos! Último: {todos[-1]['concurso']}")
+    print(f"✅ Arquivos salvos no formato Legacy! Último: {jogos[-1]['concurso']}")
 
-# --- EXTRACTORS ---
-def buscar_historico_basico():
-    """Baixa histórico rápido (pode vir sem rateio)."""
-    print("🌍 Buscando histórico básico...")
-    try:
-        r = requests.get(URL_API_COMUNITARIA, timeout=10)
-        if r.status_code == 200:
-            return [padronizar_jogo(j) for j in r.json() if padronizar_jogo(j)]
-    except: pass
-    return []
+def formatar_dezena(num):
+    """Converte 1 -> '01' (String)"""
+    return str(num).zfill(2)
 
-def enriquecer_ultimos_jogos(lista_jogos, qtd=10):
+def parse_jogo_legacy(dados):
     """
-    CRÍTICO: Vai na Caixa OFICIAL e baixa os detalhes dos últimos X jogos
-    para garantir que o RATEIO esteja atualizado.
+    Mapeia os dados da Caixa para o formato EXATO das suas imagens.
     """
-    if not lista_jogos: return []
-    
-    # Pega os IDs dos últimos 'qtd' jogos
-    ultimos_ids = [j['concurso'] for j in lista_jogos[-qtd:]]
-    print(f"💎 Enriquecendo detalhes (Rateio) dos últimos {qtd} jogos...")
-    
-    mapa_jogos = {j['concurso']: j for j in lista_jogos}
-    
-    for concurso_id in ultimos_ids:
-        try:
-            url = f"{URL_CAIXA_OFICIAL}/{concurso_id}"
-            r = requests.get(url, headers=HEADERS_CAIXA, verify=False, timeout=5)
-            
-            if r.status_code == 200:
-                dados_ricos = r.json()
-                jogo_processado = padronizar_jogo(dados_ricos)
-                
-                # Se achou rateio, substitui o jogo antigo pelo novo rico
-                if jogo_processado and jogo_processado['rateio']:
-                    mapa_jogos[concurso_id] = jogo_processado
-                    print(f"   ✅ Concurso {concurso_id}: Rateio Atualizado!")
-                else:
-                    print(f"   ⚠️ Concurso {concurso_id}: Caixa sem rateio ainda.")
-            time.sleep(0.5) # Respeito à API
-        except Exception as e:
-            print(f"   ❌ Falha ao enriquecer {concurso_id}: {e}")
-            
-    return list(mapa_jogos.values())
-
-def buscar_novos_caixa(ultimo_id_local):
-    """Busca jogos que ainda não existem no banco."""
-    print("🕵️ Verificando novos jogos na Caixa...")
-    novos = []
     try:
-        # Pega ultimo oficial
-        r = requests.get(URL_CAIXA_OFICIAL, headers=HEADERS_CAIXA, verify=False, timeout=10)
-        if r.status_code != 200: return []
+        concurso = int(dados.get('numero', dados.get('concurso', 0)))
+        if concurso == 0: return None
+
+        # Data
+        data_apuracao = dados.get('dataApuracao', dados.get('data', ''))
         
-        ultimo_real_id = r.json()['numero']
-        if ultimo_real_id <= ultimo_id_local: return []
+        # Local
+        local = f"{dados.get('localSorteio', '')} em {dados.get('nomeMunicipioUFSorteio', '')}"
+
+        # Dezenas (Tratamento especial para Strings '01')
+        raw_dezenas = dados.get('listaDezenas', dados.get('dezenas', []))
+        # Dezenas ORDENADAS (campo 'dezenas')
+        dezenas_ints = sorted([int(d) for d in raw_dezenas])
+        dezenas_fmt = [formatar_dezena(d) for d in dezenas_ints]
         
-        # Baixa os faltantes
-        for i in range(ultimo_id_local + 1, ultimo_real_id + 1):
-            print(f"   ⬇️ Baixando novo: {i}")
-            rj = requests.get(f"{URL_CAIXA_OFICIAL}/{i}", headers=HEADERS_CAIXA, verify=False)
-            if rj.status_code == 200:
-                obj = padronizar_jogo(rj.json())
-                if obj: novos.append(obj)
-            time.sleep(1)
+        # Dezenas ORDEM SORTEIO (campo 'dezenasOrdemSorteio')
+        # A API as vezes manda 'listaDezenasOrdemSorteio', se não tiver, usa a raw
+        raw_ordem = dados.get('listaDezenasOrdemSorteio', raw_dezenas)
+        dezenas_ordem_fmt = [formatar_dezena(d) for d in raw_ordem]
+
+        # Premiações (Mapear listaRateioPremio -> premiacoes)
+        premiacoes_fmt = []
+        lista_rateio = dados.get('listaRateioPremio', dados.get('premiacoes', [])) or []
+        
+        for p in lista_rateio:
+            faixa = p.get('faixa', p.get('descricaoFaixa', '')) # Tenta pegar numero da faixa
+            descricao = p.get('descricaoFaixa', '')
             
+            # Ajuste da Faixa (Se vier texto, tentar converter ou mapear)
+            # No seu print, faixa 1 = 15 acertos, faixa 2 = 14, etc.
+            faixa_int = 0
+            if '15' in str(descricao): faixa_int = 1
+            elif '14' in str(descricao): faixa_int = 2
+            elif '13' in str(descricao): faixa_int = 3
+            elif '12' in str(descricao): faixa_int = 4
+            elif '11' in str(descricao): faixa_int = 5
+            
+            # Se a API já mandar o numero da faixa, usa ele
+            if isinstance(faixa, int): faixa_int = faixa
+
+            premiacoes_fmt.append({
+                "descricao": descricao,
+                "faixa": faixa_int,
+                "ganhadores": int(p.get('numeroDeGanhadores', 0)),
+                "valorPremio": float(p.get('valorPremio', 0.0))
+            })
+        
+        # Garante a ordem das faixas (1 a 5)
+        premiacoes_fmt.sort(key=lambda x: x['faixa'])
+
+        # MONTAGEM DO JSON FINAL (Estrutura idêntica ao Print)
+        obj_final = {
+            "loteria": "lotofacil",
+            "concurso": concurso,
+            "data": data_apuracao,
+            "local": local.strip(),
+            "concursoEspecial": bool(dados.get('indicadorConcursoEspecial', False) == 1),
+            "dezenasOrdemSorteio": dezenas_ordem_fmt,
+            "dezenas": dezenas_fmt,
+            "trevos": [], # Lotofácil não tem trevos, mas o JSON pede array vazio
+            "timeCoracao": None,
+            "mesSorte": None,
+            "premiacoes": premiacoes_fmt,
+            "estadosPremiados": [], # Simplificado para vazio para não quebrar
+            "observacao": dados.get('observacao', ""),
+            "acumulou": bool(dados.get('acumulado', False)),
+            "proximoConcurso": int(dados.get('numeroConcursoProximo', 0)),
+            "dataProximoConcurso": dados.get('dataProximoConcurso', ""),
+            "localGanhadores": [], # Simplificado
+            "valorArrecadado": float(dados.get('valorArrecadado', 0.0)),
+            "valorAcumuladoConcurso_0_5": float(dados.get('valorAcumuladoConcurso_0_5', 0.0)),
+            "valorAcumuladoConcursoEspecial": float(dados.get('valorAcumuladoConcursoEspecial', 0.0)),
+            "valorAcumuladoProximoConcurso": float(dados.get('valorAcumuladoProximoConcurso', 0.0)),
+            "valorEstimadoProximoConcurso": float(dados.get('valorEstimadoProximoConcurso', 0.0))
+        }
+
+        return obj_final
+
     except Exception as e:
-        print(f"Erro busca novos: {e}")
-        
-    return novos
+        print(f"Erro parse Legacy {dados.get('numero')}: {e}") 
+        return None
 
-# --- MAIN ---
-def main():
+def buscar_jogo_caixa(id_concurso):
+    try:
+        url = f"{URL_CAIXA}/{id_concurso}"
+        r = requests.get(url, headers=HEADERS, verify=False, timeout=5)
+        if r.status_code == 200:
+            return parse_jogo_legacy(r.json())
+    except: pass
+    return None
+
+def atualizar():
     banco = carregar_banco()
     
-    # 1. Se banco vazio, popula com API rapida
-    if not banco:
-        banco = buscar_historico_basico()
+    ultimo_id_local = 0
+    if banco:
+        ultimo_id_local = max(int(j['concurso']) for j in banco)
     
-    # 2. Descobre qual o ultimo que temos
-    ultimo_id = max([j['concurso'] for j in banco]) if banco else 0
+    print(f"📊 Último local: {ultimo_id_local}")
+
+    # 1. Busca último na Caixa
+    try:
+        r = requests.get(URL_CAIXA, headers=HEADERS, verify=False, timeout=10)
+        dados_ultimo = r.json()
+        ultimo_real = int(dados_ultimo['numero'])
+    except:
+        print("❌ Erro conexão Caixa")
+        return
+
+    alteracoes = False
+
+    # 2. Baixa Novos
+    if ultimo_real > ultimo_id_local:
+        for i in range(ultimo_id_local + 1, ultimo_real + 1):
+            print(f"⬇️ Baixando {i}...")
+            novo = buscar_jogo_caixa(i)
+            if novo:
+                banco.append(novo)
+                alteracoes = True
+            time.sleep(0.5)
+
+    # 3. REPARAÇÃO / ATUALIZAÇÃO FORÇADA
+    # Verifica os últimos 3 jogos. Se 'premiacoes' estiver vazio, baixa de novo.
+    banco.sort(key=lambda x: x['concurso'])
     
-    # 3. Busca novos incrementalmente
-    novos = buscar_novos_caixa(ultimo_id)
-    if novos:
-        banco.extend(novos)
-        # Reordena
-        banco.sort(key=lambda x: x['concurso'])
-    
-    # 4. PASSO DE OURO: Força atualização dos últimos 10 para pegar o rateio
-    # Isso corrige jogos que foram salvos antes do rateio sair
-    banco_final = enriquecer_ultimos_jogos(banco, qtd=10)
-    
-    salvar(banco_final)
+    for i in range(len(banco) - 1, max(-1, len(banco) - 4), -1):
+        jogo = banco[i]
+        
+        # Validação baseada no novo formato 'premiacoes'
+        tem_premios = len(jogo.get('premiacoes', [])) > 0
+        dados_suspeitos = False
+        
+        if tem_premios:
+             # Verifica se premio principal é 0 mas tem ganhadores
+             try:
+                p15 = next((p for p in jogo['premiacoes'] if p['faixa'] == 1), None)
+                if p15 and p15['valorPremio'] == 0.0 and p15['ganhadores'] > 0: 
+                    dados_suspeitos = True
+             except: pass
+        
+        if not tem_premios or dados_suspeitos:
+            print(f"♻️ Reparando {jogo['concurso']} (Legacy Format)...")
+            versao_nova = buscar_jogo_caixa(jogo['concurso'])
+            
+            if versao_nova and len(versao_nova.get('premiacoes', [])) > 0:
+                banco[i] = versao_nova
+                alteracoes = True
+                print("   ✅ Reparado!")
+            time.sleep(1)
+
+    # Salva SEMPRE para garantir que a formatação antiga seja convertida para a nova se rodar pela primeira vez
+    salvar_arquivos(banco) 
 
 if __name__ == "__main__":
-    main()
+    atualizar()
