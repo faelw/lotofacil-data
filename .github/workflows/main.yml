@@ -2,8 +2,14 @@ name: Atualizador Lotofacil
 
 on:
   schedule:
-    - cron: '25 0 * * *'
+  # 00:35 UTC = 21:15 BRT
+    - cron: '15 0 * * *'
+    # 00:35 UTC = 21:35 BRT
     - cron: '35 0 * * *'
+    # 00:55 UTC = 21:55 BRT
+    - cron: '55 0 * * *'
+    # 01:15 UTC = 22:15 BRT
+    - cron: '15 1 * * *'
   workflow_dispatch:
 
 jobs:
@@ -16,6 +22,9 @@ jobs:
       - name: Baixar repositório
         uses: actions/checkout@v3
 
+      - name: Ajustar Fuso Horário (Visualização)
+        run: sudo timedatectl set-timezone America/Sao_Paulo
+
       - name: Instalar Python
         uses: actions/setup-python@v4
         with:
@@ -25,13 +34,14 @@ jobs:
         run: pip install requests
 
       - name: Rodar script
-        env:
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+        # O script Python vai rodar, verificar a hora e baixar se tiver jogo novo
         run: python update_loto.py
 
       - name: Salvar mudanças
         run: |
           git config --global user.name 'LotoBot'
           git config --global user.email 'bot@noreply.github.com'
+          # Adiciona apenas se houver mudanças nos JSONs
           git add api/*.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Insights Mistral AI" && git push)
+          # Comita e faz push apenas se houver algo novo
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update Lotofacil: $(date +'%d/%m/%Y %H:%M')" && git push)
