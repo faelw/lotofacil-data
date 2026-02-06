@@ -1,6 +1,93 @@
 [
   {
     "loteria": "lotofacil",
+    "concurso": 3606,
+    "data": "05/02/2026",
+    "local": "ESPAÇO DA SORTE em SÃO PAULO, SP",
+    "concursoEspecial": true,
+    "dezenasOrdemSorteio": [
+      "02",
+      "03",
+      "06",
+      "07",
+      "09",
+      "11",
+      "12",
+      "14",
+      "15",
+      "17",
+      "19",
+      "20",
+      "21",
+      "23",
+      "24"
+    ],
+    "dezenas": [
+      "02",
+      "03",
+      "06",
+      "07",
+      "09",
+      "11",
+      "12",
+      "14",
+      "15",
+      "17",
+      "19",
+      "20",
+      "21",
+      "23",
+      "24"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 7,
+        "valorPremio": 620329.13
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 746,
+        "valorPremio": 1149.25
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 17509,
+        "valorPremio": 35.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 177605,
+        "valorPremio": 14.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 888754,
+        "valorPremio": 7.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "",
+    "acumulou": false,
+    "proximoConcurso": 3607,
+    "dataProximoConcurso": "06/02/2026",
+    "localGanhadores": [],
+    "valorArrecadado": 36345109.5,
+    "valorAcumuladoConcurso_0_5": 2109550.14,
+    "valorAcumuladoConcursoEspecial": 65282831.53,
+    "valorAcumuladoProximoConcurso": 0.0,
+    "valorEstimadoProximoConcurso": 1800000.0
+  },
+  {
+    "loteria": "lotofacil",
     "concurso": 3605,
     "data": "04/02/2026",
     "local": "ESPAÇO DA SORTE em SÃO PAULO, SP",
@@ -824,27 +911,6 @@
       22,
       23,
       25
-    ]
-  },
-  {
-    "concurso": 3591,
-    "data": "19/01/2026",
-    "dezenas": [
-      1,
-      2,
-      3,
-      4,
-      6,
-      7,
-      10,
-      11,
-      13,
-      14,
-      15,
-      17,
-      18,
-      19,
-      20
     ]
   }
 ]
