@@ -1,6 +1,93 @@
 [
   {
     "loteria": "lotofacil",
+    "concurso": 3609,
+    "data": "09/02/2026",
+    "local": "ESPAÇO DA SORTE em SÃO PAULO, SP",
+    "concursoEspecial": true,
+    "dezenasOrdemSorteio": [
+      "02",
+      "05",
+      "06",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13",
+      "17",
+      "19",
+      "20",
+      "22",
+      "24",
+      "25"
+    ],
+    "dezenas": [
+      "02",
+      "05",
+      "06",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13",
+      "17",
+      "19",
+      "20",
+      "22",
+      "24",
+      "25"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 2,
+        "valorPremio": 759280.97
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 362,
+        "valorPremio": 1256.54
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 11046,
+        "valorPremio": 35.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 118067,
+        "valorPremio": 14.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 597635,
+        "valorPremio": 7.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "",
+    "acumulou": false,
+    "proximoConcurso": 3610,
+    "dataProximoConcurso": "10/02/2026",
+    "localGanhadores": [],
+    "valorArrecadado": 22201378.5,
+    "valorAcumuladoConcurso_0_5": 3018142.89,
+    "valorAcumuladoConcursoEspecial": 66645720.69,
+    "valorAcumuladoProximoConcurso": 3018142.89,
+    "valorEstimadoProximoConcurso": 7000000.0
+  },
+  {
+    "loteria": "lotofacil",
     "concurso": 3608,
     "data": "07/02/2026",
     "local": "ESPAÇO DA SORTE em SÃO PAULO, SP",
@@ -991,56 +1078,6 @@
       {
         "acertos": 11,
         "ganhadores": 596913,
-        "premio": 7.0
-      }
-    ]
-  },
-  {
-    "concurso": 3594,
-    "data": "22/01/2026",
-    "dezenas": [
-      1,
-      2,
-      4,
-      5,
-      7,
-      8,
-      9,
-      11,
-      14,
-      15,
-      18,
-      20,
-      21,
-      23,
-      24
-    ],
-    "acumulou": false,
-    "valor_acumulado": 1317759.17,
-    "rateio": [
-      {
-        "acertos": 15,
-        "ganhadores": 1,
-        "premio": 1682823.51
-      },
-      {
-        "acertos": 14,
-        "ganhadores": 281,
-        "premio": 1793.84
-      },
-      {
-        "acertos": 13,
-        "ganhadores": 8977,
-        "premio": 35.0
-      },
-      {
-        "acertos": 12,
-        "ganhadores": 95897,
-        "premio": 14.0
-      },
-      {
-        "acertos": 11,
-        "ganhadores": 510107,
         "premio": 7.0
       }
     ]
