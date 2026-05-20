@@ -2,7 +2,22 @@ name: Atualizador Lotofacil
 
 on:
   schedule:
-  # 00:35 UTC = 21:15 BRT
+    # -----------------------------------------------------------------
+    # CONFERÊNCIAS DURANTE O DIA (Horário de Brasília)
+    # -----------------------------------------------------------------
+    # 12:00 UTC = 09:00 BRT
+    - cron: '0 12 * * *'
+    # 15:00 UTC = 12:00 BRT (Meio-dia)
+    - cron: '0 15 * * *'
+    # 18:00 UTC = 15:00 BRT
+    - cron: '0 18 * * *'
+    # 21:00 UTC = 18:00 BRT (Fim da tarde)
+    - cron: '0 21 * * *'
+
+    # -----------------------------------------------------------------
+    # CONFERÊNCIAS CRÍTICAS DA NOITE (Seus horários originais mantidos)
+    # -----------------------------------------------------------------
+    # 00:15 UTC = 21:15 BRT
     - cron: '15 0 * * *'
     # 00:35 UTC = 21:35 BRT
     - cron: '35 0 * * *'
@@ -10,6 +25,7 @@ on:
     - cron: '55 0 * * *'
     # 01:15 UTC = 22:15 BRT
     - cron: '15 1 * * *'
+    
   workflow_dispatch:
 
 jobs:
@@ -34,14 +50,11 @@ jobs:
         run: pip install requests
 
       - name: Rodar script
-        # O script Python vai rodar, verificar a hora e baixar se tiver jogo novo
         run: python update_loto.py
 
       - name: Salvar mudanças
         run: |
           git config --global user.name 'LotoBot'
           git config --global user.email 'bot@noreply.github.com'
-          # Adiciona apenas se houver mudanças nos JSONs
           git add api/*.json
-          # Comita e faz push apenas se houver algo novo
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update Lotofacil: $(date +'%d/%m/%Y %H:%M')" && git push)
