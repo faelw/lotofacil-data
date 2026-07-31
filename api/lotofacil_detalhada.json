@@ -1,6 +1,93 @@
 [
   {
     "loteria": "lotofacil",
+    "concurso": 3749,
+    "data": "30/07/2026",
+    "local": "ESPAÇO DA SORTE em SÃO PAULO,  SP",
+    "concursoEspecial": true,
+    "dezenasOrdemSorteio": [
+      "01",
+      "02",
+      "03",
+      "07",
+      "08",
+      "09",
+      "11",
+      "12",
+      "14",
+      "17",
+      "19",
+      "21",
+      "23",
+      "24",
+      "25"
+    ],
+    "dezenas": [
+      "01",
+      "02",
+      "03",
+      "07",
+      "08",
+      "09",
+      "11",
+      "12",
+      "14",
+      "17",
+      "19",
+      "21",
+      "23",
+      "24",
+      "25"
+    ],
+    "trevos": [],
+    "timeCoracao": null,
+    "mesSorte": null,
+    "premiacoes": [
+      {
+        "descricao": "15 acertos",
+        "faixa": 1,
+        "ganhadores": 1,
+        "valorPremio": 1290821.15
+      },
+      {
+        "descricao": "14 acertos",
+        "faixa": 2,
+        "ganhadores": 334,
+        "valorPremio": 1157.63
+      },
+      {
+        "descricao": "13 acertos",
+        "faixa": 3,
+        "ganhadores": 10011,
+        "valorPremio": 35.0
+      },
+      {
+        "descricao": "12 acertos",
+        "faixa": 4,
+        "ganhadores": 107424,
+        "valorPremio": 14.0
+      },
+      {
+        "descricao": "11 acertos",
+        "faixa": 5,
+        "ganhadores": 514915,
+        "valorPremio": 7.0
+      }
+    ],
+    "estadosPremiados": [],
+    "observacao": "",
+    "acumulou": false,
+    "proximoConcurso": 3750,
+    "dataProximoConcurso": "31/07/2026",
+    "localGanhadores": [],
+    "valorArrecadado": 19257749.0,
+    "valorAcumuladoConcurso_0_5": 3726513.95,
+    "valorAcumuladoConcursoEspecial": 139991653.36,
+    "valorAcumuladoProximoConcurso": 3726513.95,
+    "valorEstimadoProximoConcurso": 8000000.0
+  },
+  {
+    "loteria": "lotofacil",
     "concurso": 3748,
     "data": "29/07/2026",
     "local": "ESPAÇO DA SORTE em SÃO PAULO, SP",
@@ -1216,92 +1303,5 @@
     "valorAcumuladoConcursoEspecial": 131145151.53,
     "valorAcumuladoProximoConcurso": 1647499.0,
     "valorEstimadoProximoConcurso": 5000000.0
-  },
-  {
-    "loteria": "lotofacil",
-    "concurso": 3734,
-    "data": "13/07/2026",
-    "local": "ESPAÇO DA SORTE em SÃO PAULO,  SP",
-    "concursoEspecial": true,
-    "dezenasOrdemSorteio": [
-      "02",
-      "03",
-      "05",
-      "08",
-      "10",
-      "12",
-      "13",
-      "14",
-      "15",
-      "16",
-      "17",
-      "19",
-      "22",
-      "23",
-      "25"
-    ],
-    "dezenas": [
-      "02",
-      "03",
-      "05",
-      "08",
-      "10",
-      "12",
-      "13",
-      "14",
-      "15",
-      "16",
-      "17",
-      "19",
-      "22",
-      "23",
-      "25"
-    ],
-    "trevos": [],
-    "timeCoracao": null,
-    "mesSorte": null,
-    "premiacoes": [
-      {
-        "descricao": "15 acertos",
-        "faixa": 1,
-        "ganhadores": 3,
-        "valorPremio": 473309.6
-      },
-      {
-        "descricao": "14 acertos",
-        "faixa": 2,
-        "ganhadores": 453,
-        "valorPremio": 938.9
-      },
-      {
-        "descricao": "13 acertos",
-        "faixa": 3,
-        "ganhadores": 12244,
-        "valorPremio": 35.0
-      },
-      {
-        "descricao": "12 acertos",
-        "faixa": 4,
-        "ganhadores": 129770,
-        "valorPremio": 14.0
-      },
-      {
-        "descricao": "11 acertos",
-        "faixa": 5,
-        "ganhadores": 595533,
-        "valorPremio": 7.0
-      }
-    ],
-    "estadosPremiados": [],
-    "observacao": "",
-    "acumulou": false,
-    "proximoConcurso": 3735,
-    "dataProximoConcurso": "14/07/2026",
-    "localGanhadores": [],
-    "valorArrecadado": 22118694.5,
-    "valorAcumuladoConcurso_0_5": 988557.46,
-    "valorAcumuladoConcursoEspecial": 130746563.06,
-    "valorAcumuladoProximoConcurso": 0.0,
-    "valorEstimadoProximoConcurso": 2000000.0
   }
 ]
